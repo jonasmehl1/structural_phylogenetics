@@ -1,0 +1,12 @@
+name: reco
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - bioconda::java-jdk
+  - newick_utils
+  - gxx
+  - treeswift
+  - csvtk
+  - seqkit
+  - seqtk
