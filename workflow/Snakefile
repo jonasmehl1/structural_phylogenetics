@@ -1,5 +1,3 @@
-# Overall this snakemake file is a modified version of the original one, which keeps the relevant steps but gets rid of the non applicable stuff (Astral and Notung support, blast vs foldseek and much more).
-
 import glob
 import pandas as pd
 import snakemake.utils
@@ -7,47 +5,36 @@ import snakemake.utils
 # Load fixed config parameters
 configfile: "config/params.yaml"
 
-# get the input directory
-input_dir = config["input_dir"]
-output_dir = config["outdir"]
-combinations_ML = config["combinations_ML"]
+# get the output directory and define the structure directory
+output_dir = config.get("outdir", "results/my_results")
+input_dir = output_dir + "/structs"
 
-# Here only the rule make_fastas that exctracts the fast sequence from pdb file is of interest
-# include: 'rules/prepare.smk'
-# This contains the rules for foldseek
-include: 'rules/structure.smk'
-# This constructs blast databases used for searching, unclear if i need this
-# include: 'rules/sequence.smk'
-# Some stuff here might be useful, some not
-# include: 'rules/checks.smk'
-# Makes alignments and actually runs the trees
-include: 'rules/common.smk'
-# mainly for plotting, probably not needed
-# include: 'rules/analysis.smk'
+identifiers = config.get("identifiers", "identifiers.txt")
+
+# Define model combinations for partition
+combinations_ML = config["combinations_ML"]
+3di_models = config["3di_models"]
+
+# include rules
 include: 'rules/download_data.smk'
+include: 'rules/alignment.smk'
+include: 'rules/trees.smk'
+
 
 rule all:
     input:
         # download structures, wait for it to be done
         f"{output_dir}/done.txt",
 
-        # Filtered homologs (if needed)
-        # f"{output_dir}/foldseek/results/filtered_homologs.tsv",
-
-        # Foldmason Report
-        #f"{output_dir}/foldtree/foldmason_report/foldmason_alignment_3di.html",
-
-        # ✅ FoldTree Results
+        # FoldTree Results
         f"{output_dir}/foldtree/foldtree_3di_FT.nwk",
         # f"{output_dir}/foldtree/foldtree_py/foldtree_3di_FTPY.nwk"
-        # fastME Results
-        #f"{output_dir}/fastME/FM.nwk",
 
         # IQ-TREE results for each alphabet and model
         f"{output_dir}/iqtree/aa/LG.iqtree",
-        expand(f"{output_dir}/iqtree/3di/{{model}}.nwk", model=["3di", "AF"]),  # 3di and AF for 3di alphabet
+        expand(f"{output_dir}/iqtree/3di/{{3di_models}}.nwk"),  # 3di and AF for 3di alphabet
 
-        # Partitioned IQ-TREE results combining LG with both 3di and AF
-        expand(f"{output_dir}/iqtree_partitioned/LG_{{combs_3di}}.nwk",
-               combs_3di=["3di", "AF"])
+        # Partitioned IQ-TREE results combining the ML result with both 3di and AF
+        expand(f"{output_dir}/iqtree_partitioned/ML_{{3di_models}}.nwk")
+
 

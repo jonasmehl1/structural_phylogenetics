@@ -1,9 +1,0 @@
-name: sp_homology
-channels:
-  - bioconda
-  - conda-forge
-dependencies:
-  - blast
-  - foldseek
-  - csvtk
-  - seqkit

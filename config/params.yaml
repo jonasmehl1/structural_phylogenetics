@@ -1,66 +1,54 @@
 # PARAMS
-# if you have predefined structures
-input_dir: "Foldmason_results/JASSY/structs"
-data_dir: 'data'
-outdir: 'Foldmason_results/JASSY'
+# Output folder that will get created, can be overwritten with 
+# snakemake --config output_dir="results/my_run"
+outdir: 'results/my_result'
+# Uniprot identifiers formated as one identifiers per line
+identifiers: 'data/input/identifiers.txt'
 
-# Foldtree options
-clean_folder: False
-custom_structs: False
-cath: False
-
-# Download pipeline, exclude structures with mean pLDDT lower than X
-low_confidence: 40
-# minimum length of seed protein to keep (used in cif2fasta.py)
-min_len: 0
-
-# possible methodological combination. You can exclude whichever
-
-alphabets: ["aa", "3Di"]
-models: ["LG", "3Di", "AF"] #, "LLM", "GTR"]
-
-combinations: ["3Di_3Di", "3Di_FT", "comb_part", "3Di_AF"] #, "3Di_FTPY"]
-# combinations: ["3Di_3Di", "aa_FM", "aa_LG", "3Di_GTR", "3Di_FT", "comb_part", "3Di_LLM", "3Di_AF"] #, "3Di_FTPY"]
-# Subset of the first one that requires ML 
-# combinations_ML: ["3Di_3Di", "aa_LG", "3Di_GTR", "comb_part", "3Di_LLM", "3Di_AF"]
-combinations_ML: ["3Di_3Di", "comb_part", "3Di_AF"]
-# which 3Di ML method should be combined with the seqence based tree
-combs_3Di: ["3Di","AF"]
-
-
-
-# Target sets, you can exclude whichever to reduce computations
-# modes: ['blast', 'fs', 'common', 'union']
-modes: ['union']
-# Which target set will be used in foldmason examples
-foldmason_set: 'union'
-# Number of foldmason examples
-n_examples: 50
-
-# target per queries in both foldseek and blast
-target_seqs: 1000
-max_seqs_brh: 5
-
-# minimum filter evalue
-eval_both: 1e-3
-coverage: 50
-eval_brh: 10
-
-# how many targets to do the tree
-max_seqs: 150
-
-# how many minimum common targets to proceed with the tree
-min_common: 4
-
-# min lddt to mask residues in 3Di alignments
-min_lddt: 50
-
+# Decide which modelfinder procedure or to use or pick a model. Full Model consideration might significantly lower speed but give better accuracy
+# use modelfinder
+ML_model: 'MF+I+R'
+# Ml_model: 'MF'
+# specify model, e.g. LG
+# Ml_model: 'LG'
 # Ultrafast bootstrap for iqtree
 UF_boot: 1000
 # Boostrap for fastme
 distboot: 100
 
-# files and folders
+# Download pipeline, exclude structures with mean pLDDT lower than X
+low_confidence: 40
+
+# structural Alphabets and Models 
+alphabets: ["aa", "3Di"]
+
+# For the partitioned iqtree part, which combinations should be used
+combinations_ML: ["ML", "ML_AF", ML_3di"]
+# which 3Di ML method should be combined with the seqence based tree
+3di_models: ["3Di","AF"]
+
+# min lddt to mask residues in 3Di alignments
+min_lddt: 50
+
+# Foldtree options
+clean_folder: False
+custom_structs: False
+
+# Hypothetical if i would include foldseek in the pipeline
+# target per queries in both foldseek and blast
+#target_seqs: 1000
+
+#max_seqs_brh: 5
+
+# minimum filter evalue
+#eval_both: 1e-3
+#coverage: 50
+#eval_brh: 10
+# how many targets to do the tree
+#max_seqs: 150
+
+
+# substitution matrices
 subst_matrix: 
   aln: 'data/subst_matrixes/mat3di.out'
   3di: 'data/subst_matrixes/3DI.nexus'
