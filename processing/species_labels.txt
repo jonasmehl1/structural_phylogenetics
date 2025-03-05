@@ -1,0 +1,939 @@
+LABELS
+SEPARATOR COMMA
+DATA
+NODE_ID,LABEL,CLASS
+A0A847F7V9,Sandaracinaceae bacterium
+G3NCG9,Gasterosteus aculeatus aculeatus (three-spined stickleback)
+A0A087HQN4,Arabis alpina (Alpine rock-cress)
+A0A087SPC8,Auxenochlorella protothecoides (Green microalga) (Chlorella protothecoides)
+A0A098TJ81,Neosynechococcus sphagnicola sy1
+A0A0A1U116,Entamoeba invadens IP1
+A0A0A1U8U3,Entamoeba invadens IP1
+A0A0A1UBZ1,Entamoeba invadens IP1
+A0A0D2MPJ9,Monoraphidium neglectum
+A0A166AZX0,Fibularhizoctonia sp. CBS 109695
+A0A178WI13,Arabidopsis thaliana (Mouse-ear cress)
+A0A1C5AN32,Micromonospora matsumotoense
+A0A1H7GBI3,Rhodococcus maanshanensis
+A0A1J3E988,Noccaea caerulescens (Alpine penny-cress) (Thlaspi caerulescens)
+A0A1V5VA95,bacterium ADurb.Bin236
+A0A1Y1I0H6,Klebsormidium nitens (Green alga) (Ulothrix nitens)
+A0A2E5FGA7,bacterium
+A0A2E7UQ44,Deltaproteobacteria bacterium
+A0A2E8PXP8,Spirochaetaceae bacterium
+A0A2P6VNG5,Micractinium conductrix
+A0A2S5ME06,Hyphomicrobium sp
+A0A2T1C5C3,Merismopedia glauca CCAP 1448/3
+A0A2T4VAL1,Vitiosangium sp. (strain GDMCC 1.1324)
+A0A2V0PDX6,Raphidocelis subcapitata
+A0A2V7TWY7,Acidobacteriota bacterium
+A0A2W1JT14,Acaryochloris thomasi RCC1774
+A0A496XR95,Campylobacterota bacterium
+A0A544YQP1,Microbispora hainanensis
+A0A6C1RHG0,Spirochaetaceae bacterium
+A0A6C1RHL3,Spirochaetaceae bacterium
+A0A6C1RKB7,Spirochaetaceae bacterium
+A0A7C0YUZ7,Pseudomonadota bacterium
+A0A7C3IQG2,Gracilinema caldarium
+A0A7C3KF49,Oscillatoriales cyanobacterium SpSt-418
+A0A7I8VMZ9,Dimorphilus gyrociliatus
+A0A7J7PVS7,Scenedesmus sp. NREL 46B-D3
+A0A7R9ACE0,Darwinula stevensoni
+A0A7S2V1I2,Fibrocapsa japonica
+A0A7X0I8H5,Sphaerisporangium rubeum
+A0A815JAY9,Adineta steineri
+A0A842TMB9,Promethearchaeota archaeon
+A8MQQ6,Arabidopsis thaliana (Mouse-ear cress)
+F8EY36,Gracilinema caldarium (strain ATCC 51460 / DSM 7334 / H1) (Treponema caldarium)
+A0A2D4NV30,Micrurus surinamensis (Surinam coral snake)
+A0A3Q3AV33,Kryptolebias marmoratus (Mangrove killifish) (Rivulus marmoratus)
+A0A080ZTN3,Phytophthora nicotianae P1976
+A0A090M959,Ostreococcus tauri
+A0A0B6ZL32,Arion vulgaris
+A0A165LZD5,Pelodictyon luteolum
+A0A1E7YXE7,Acidithiobacillus caldus
+A0A1J6IVF0,Nicotiana attenuata (Coyote tobacco)
+A0A1Y1IFV9,Klebsormidium nitens (Green alga) (Ulothrix nitens)
+A0A2E2XCG1,Cellvibrionaceae bacterium
+A0A2E7M8Z2,Deltaproteobacteria bacterium
+A0A2G8KFA2,Stichopus japonicus (Sea cucumber)
+A0A2I0D8L6,Psychroflexus sp. MES1-P1E
+A0A2M9LYD8,Streptomyces sp. CB02959
+A0A328AYV9,Phenylobacterium hankyongense
+A0A359F7A7,Acidimicrobiaceae bacterium
+A0A370GI71,Nocardia mexicana
+A0A378TGK3,Mycolicibacterium tokaiense
+A0A397XYW7,Brassica campestris (Field mustard)
+A0A3M2L8I6,Nocardia stercoris
+A0A3N4HBE2,Cyclobacteriaceae bacterium YHN15
+A0A3N5P060,Acidobacteriota bacterium
+A0A4R0QNQ7,Chlorobium sp. N1
+A0A5E8B4V2,Magnusiomyces paraingens
+A0A5M8ICN2,Chlorobium phaeovibrioides
+A0A654ECI1,Arabidopsis thaliana (Mouse-ear cress)
+A0A699ZU64,Haematococcus lacustris (Green alga) (Haematococcus pluvialis)
+A0A6M0LN80,Prosthecochloris sp
+A0A6M8BKB8,Thermoleptolyngbya sichuanensis A183
+A0A7J7QMW8,Scenedesmus sp. NREL 46B-D3
+A0A7J8PU09,Gossypium raimondii (Peruvian cotton) (Gossypium klotzschianum subsp. raimondii)
+A0A7K0C521,Actinomadura macrotermitis
+A0A7M3NMJ5,Streptomyces sp. uw30
+A0A7R8WFY7,Cyprideis torosa
+A0A7R9UY12,Diacronema lutheri (Unicellular marine alga) (Monochrysis lutheri)
+A0A7V2WF40,Aeromonadales bacterium
+A0A7Y0XV28,Chlorobiaceae bacterium
+A0A7Y1YXC7,Lysobacterales bacterium
+A0A7Y2NZP5,Telluria aromaticivorans
+A0A819F213,Adineta steineri
+A0A835WLC7,Chlamydomonas schloesseri
+A4S054,Ostreococcus lucimarinus (strain CCE9901)
+F0YEA7,Aureococcus anophagefferens (Harmful bloom alga)
+Q9ZUE2,Arabidopsis thaliana (Mouse-ear cress)
+R0IG01,Capsella rubella
+V4KWJ9,Eutrema salsugineum (Saltwater cress) (Sisymbrium salsugineum)
+A0A452IAN9,Gopherus agassizii (Agassiz's desert tortoise)
+A0A452IB50,Gopherus agassizii (Agassiz's desert tortoise)
+A0A7R9AFK0,Darwinula stevensoni
+A0A087SBM1,Auxenochlorella protothecoides (Green microalga) (Chlorella protothecoides)
+A0A0M0JC04,Chrysochromulina tobinii
+A0A150GCM8,Gonium pectorale (Green alga)
+A0A178WMX6,Arabidopsis thaliana (Mouse-ear cress)
+A0A1H0HTV1,Rhodoferax sp. OV413
+A0A1H6UT53,Variovorax sp. OK202
+A0A1Y1IS14,Klebsormidium nitens (Green alga) (Ulothrix nitens)
+A0A1Z9H330,Proteobacteria bacterium TMED154
+A0A250WR40,Chlamydomonas eustigma
+A0A2E0GM55,Gammaproteobacteria bacterium
+A0A2E0TK86,Sandaracinus sp
+A0A2E9QEP0,Spirochaetaceae bacterium
+A0A2N3VZ96,Streptomyces sp. TLI_146
+A0A2V0P0J7,Raphidocelis subcapitata
+A0A2W1JDH8,Acaryochloris thomasi RCC1774
+A0A317T4J8,Prosthecochloris marina
+A0A349N565,Gammaproteobacteria bacterium
+A0A3D3FKG6,Treponema sp
+A0A3F2RKC8,Phytophthora kernoviae
+A0A3P6EW46,Brassica oleracea (Wild cabbage)
+A0A4S3FI97,Massilia sp. Mn16-1_5
+A0A533TWC3,Chlorobium sp
+A0A565ASC7,Arabis nemorensis
+A0A5J4XI69,Trebouxia sp. A1-2
+A0A5S9VR13,Arabidopsis thaliana (Mouse-ear cress)
+A0A6A3HNP9,Phytophthora rubi
+A0A6D2HUK3,Microthlaspi erraticum
+A0A6I7PLE9,Spirochaetaceae bacterium
+A0A6I7PPY8,Spirochaetaceae bacterium
+A0A7C4SYA4,Spirochaetota bacterium (Spirochaetes)
+A0A7J8H7V7,Rousettus aegyptiacus (Egyptian fruit bat) (Pteropus aegyptiacus)
+A0A7S1Y726,Grammatophora oceanica
+A0A7S3F2R6,Haptolina ericina
+A0A7S3L6T1,Amphora coffeiformis
+A0A7Y3HBX0,Lysobacterales bacterium
+A0A812ECM3,Sepia pharaonis (Pharaoh cuttlefish)
+A0A841DZZ4,Kribbella solani
+D8R0I6,Selaginella moellendorffii (Spikemoss)
+Q0YRG4,Chlorobium ferrooxidans DSM 13031
+Q38888,Arabidopsis thaliana (Mouse-ear cress)
+Q9ZUC8,Arabidopsis thaliana (Mouse-ear cress)
+V9EQT0,Phytophthora nicotianae P1569
+W2IMM9,Phytophthora nicotianae (Potato buckeye rot agent) (Phytophthora parasitica)
+W2PDG5,Phytophthora nicotianae (strain INRA-310) (Phytophthora parasitica)
+A0A3P8ND77,Astatotilapia calliptera (Eastern happy) (Chromis callipterus)
+A0A1D1VU38,Ramazzottius varieornatus (Water bear) (Tardigrade)
+A0A507CED2,Synchytrium microbalum
+A0A6P7S633,Octopus vulgaris (Common octopus)
+R7V9W1,Capitella teleta (Polychaete worm)
+S4RXK4,Petromyzon marinus (Sea lamprey)
+A0A011QCX8,Accumulibacter regalis
+A0A067CQE8,Saprolegnia parasitica (strain CBS 223.65)
+A0A067GUN2,Citrus sinensis (Sweet orange) (Citrus aurantium var. sinensis)
+A0A069DUN0,Panstrongylus megistus
+A0A1X6P0P5,Porphyra umbilicalis (Purple laver) (Red alga)
+A0A1Z4JHX3,Leptolyngbya boryana NIES-2135
+A0A222SGD8,Prosthecochloris sp. GSB1
+A0A2N1R1Y7,Spirochaetae bacterium HGW-Spirochaetae-9
+A0A2P6V2D7,Micractinium conductrix
+A0A2V0PFL2,Raphidocelis subcapitata
+A0A2W4XKS7,Phormidesmis priestleyi
+A0A329RPU1,Phytophthora cactorum
+A0A399XN25,Acidobacteriota bacterium
+A0A3F2RJN6,Phytophthora kernoviae
+A0A3M1CUP5,Deltaproteobacteria bacterium
+A0A3N4IMI5,Ascobolus immersus RN42
+A0A3P6AYH7,Brassica campestris (Field mustard)
+A0A449G9C0,Gordonia paraffinivorans
+A0A533T5L7,Chlorobium sp
+A0A537DHZ8,Betaproteobacteria bacterium
+A0A5B8NAK5,Noviherbaspirillum sp. UKPF54
+A0A651E0Y3,Gemmatimonadales bacterium
+A0A661MU95,Deltaproteobacteria bacterium
+A0A6A3I1L4,Phytophthora rubi
+A0A6C1QUD6,Spirochaetaceae bacterium
+A0A6J0KNY0,Raphanus sativus (Radish) (Raphanus raphanistrum var. sativus)
+A0A7C3ZP88,Planktothricoides sp. SpSt-374
+A0A7C8Z074,Opuntia streptacantha (Prickly pear cactus) (Opuntia cardona)
+A0A7S1CYB1,Cyclophora tenuis (Marine diatom)
+A0A7S1TWT6,Phaeomonas parva
+A0A7S3RFW1,Strombidinopsis acuminata
+A0A7S3VUE8,Dunaliella tertiolecta (Green alga)
+A0A7V4EKY4,bacterium
+A0A812KRT7,Symbiodinium sp. CCMP2592
+A0A830BSY2,Phtheirospermum japonicum
+A0A8B5WQZ0,Spirochaetaceae bacterium
+D2VTQ0,Naegleria gruberi (Amoeba)
+D6WT76,Tribolium castaneum (Red flour beetle)
+K9SR89,Synechococcus sp. PCC 7502
+K9V8E2,Calothrix sp. PCC 6303
+M1BCT7,Solanum tuberosum (Potato)
+R0GTV5,Capsella rubella
+V4TP09,Citrus clementina (Clementine) (Citrus deliciosa x Citrus sinensis)
+A0A1H3M307,Micromonospora pattaloongensis
+A0A3B3ZDP8,Periophthalmus magnuspinnatus
+A0A3L8DCB3,Ooceraea biroi (Clonal raider ant) (Cerapachys biroi)
+A0A6P6LX30,Carassius auratus (Goldfish)
+A0A6P8IXL9,Actinia tenebrosa (Australian red waratah sea anemone)
+A0A816FBU6,Rotaria sordida
+A0A817K043,Rotaria sp. Silwood2
+A0A078J4W1,Brassica napus (Rape)
+A0A0B0MVX2,Gossypium arboreum (Tree cotton) (Gossypium nanking)
+A0A0K2YR85,Rhodococcus sp. RD6.2
+A0A176VQW5,Marchantia polymorpha subsp. ruderalis
+A0A178WN05,Arabidopsis thaliana (Mouse-ear cress)
+A0A1D1ZX34,Auxenochlorella protothecoides (Green microalga) (Chlorella protothecoides)
+A0A2E1IR72,Cyanobium sp. MED843
+A0A2P6TYN1,Chlorella sorokiniana (Freshwater green alga)
+A0A2V0P7T1,Raphidocelis subcapitata
+A0A397L177,Brassica campestris (Field mustard)
+A0A3C1KUV7,Myxococcales bacterium
+A0A3M1B896,Planctomycetota bacterium
+A0A4D9DD14,Nannochloropsis salina CCMP1776
+A0A4U3LPW1,Kribbella jiaozuonensis
+A0A521K1L4,Nitrospirota bacterium
+A0A5B8MBR2,Chloropicon primus
+A0A652ZTD8,uncultured Spirochaetota bacterium
+A0A662XDJ9,Nothophytophthora sp. (strain Chile5)
+A0A6A0AL21,Haematococcus lacustris (Green alga) (Haematococcus pluvialis)
+A0A6A4C467,Phytophthora rubi
+A0A6I8NEF7,Ornithorhynchus anatinus (Duckbill platypus)
+A0A6J0JED2,Raphanus sativus (Radish) (Raphanus raphanistrum var. sativus)
+A0A7C4E389,Betaproteobacteria bacterium
+A0A7M4ELD9,Crocodylus porosus (Saltwater crocodile) (Estuarine crocodile)
+A0A7R8XCD3,Darwinula stevensoni
+A0A7S0WTH3,Pyramimonas obovata
+A0A7S0WU40,Chlamydomonas leiostraca
+A0A7S0ZPW1,Noctiluca scintillans (Sea sparkle) (Red tide dinoflagellate)
+A0A7S2B1P7,Alexandrium andersonii
+A0A7S2IIZ1,Haptolina brevifila
+A0A7X7T311,Holophagae bacterium
+A0A813GBU7,Polarella glacialis (Dinoflagellate)
+A0A835Y6P1,Edaphochlamys debaryana
+E1Z3K6,Chlorella variabilis (Green alga)
+E1ZR86,Chlorella variabilis (Green alga)
+G1LFM3,Ailuropoda melanoleuca (Giant panda)
+M1WZ06,Richelia intracellularis HH01
+M2W8X6,Galdieria sulphuraria (Red alga)
+Q31PK7,Synechococcus elongatus (strain ATCC 33912 / PCC 7942 / FACHB-805) (Anacystis nidulans R2)
+A0A3S1H3M3,Elysia chlorotica (Eastern emerald elysia) (Sea slug)
+A0A672MG80,Sinocyclocheilus grahami (Dianchi golden-line fish) (Barbus grahami)
+A0A7J6HKK2,Cannabis sativa (Hemp) (Marijuana)
+A0A7L3AZ76,Syrrhaptes paradoxus (Pallas's sandgrouse)
+A0A818XTS2,Adineta steineri
+A0A0D3D736,Brassica oleracea var. oleracea
+A0A0V1L9C1,Trichinella nativa
+A0A1P8AUR4,Arabidopsis thaliana (Mouse-ear cress)
+A0A246RT66,Micromonospora wenchangensis
+A0A250WWE9,Chlamydomonas eustigma
+A0A2E7ZR91,Myxococcales bacterium
+A0A2K1ICX5,Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)
+A0A2P6V6E9,Micractinium conductrix
+A0A2R6RB15,Actinidia chinensis var. chinensis (Chinese soft-hair kiwi)
+A0A2T9Y0E5,Smittium megazygosporum
+A0A2U1RN69,Candidatus Methylomirabilota bacterium
+A0A2W4SUK5,Pseudomonadota bacterium
+A0A351BCG2,Accumulibacter sp
+A0A3R7M8P6,Penaeus vannamei (Whiteleg shrimp) (Litopenaeus vannamei)
+A0A427AK23,Ensete ventricosum (Abyssinian banana) (Musa ensete)
+A0A536U264,Betaproteobacteria bacterium
+A0A5N5I998,Pyrus ussuriensis x Pyrus communis
+A0A6A3WZA5,Phytophthora fragariae
+A0A6N2AUL7,Solanum chilense (Tomato) (Lycopersicon chilense)
+A0A6N2D1F7,Deltaproteobacteria bacterium
+A0A7I4CC49,Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)
+A0A7I8CX80,Paraburkholderia sp. PGU19
+A0A7J7QQE8,Scenedesmus sp. NREL 46B-D3
+A0A7R9SZN4,Ostreococcus sp. 'lucimarinus'
+A0A7S0IX94,Calcidiscus leptoporus
+A0A7S0WI01,Ostreococcus mediterraneus
+A0A7S3A1M1,Rhodosorus marinus
+A0A7S4F8J8,Chrysotila carterae (Marine alga) (Syracosphaera carterae)
+A0A835XY46,Edaphochlamys debaryana
+A0A836BSA9,Edaphochlamys debaryana
+A9RFP1,Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)
+D7KNH0,Arabidopsis lyrata subsp. lyrata (Lyre-leaved rock-cress)
+H3GPV7,Phytophthora ramorum (Sudden oak death agent)
+I0YSE2,Coccomyxa subellipsoidea (strain C-169) (Green microalga)
+K3W9H8,Globisporangium ultimum (strain ATCC 200006 / CBS 805.95 / DAOM BR144) (Pythium ultimum)
+K3WXI0,Globisporangium ultimum (strain ATCC 200006 / CBS 805.95 / DAOM BR144) (Pythium ultimum)
+L8DPU5,Rhodococcus sp. AW25M09
+Q9ZUD5,Arabidopsis thaliana (Mouse-ear cress)
+R7QCL7,Chondrus crispus (Carrageen Irish moss) (Polymorpha crispa)
+U7MNS9,Corynebacterium sp. KPL1989
+W2I621,Phytophthora nicotianae (Potato buckeye rot agent) (Phytophthora parasitica)
+W2YWI8,Phytophthora nicotianae P10297
+A0A667YJ04,Myripristis murdjan (pinecone soldierfish)
+A0A6B0S7M7,Bos mutus (wild yak)
+A0A6P5A4S8,Branchiostoma belcheri (Amphioxus)
+A0A6P8EWJ6,Clupea harengus (Atlantic herring)
+A0A6V7HB33,Heterotrigona itama
+A0A7S1ZVU3,Trieres chinensis (Marine centric diatom) (Odontella sinensis)
+A0A078JQJ0,Brassica napus (Rape)
+A0A0D2JM47,Monoraphidium neglectum
+A0A0D2KRB7,Monoraphidium neglectum
+A0A0D2LV94,Monoraphidium neglectum
+A0A0P0XKL1,Oryza sativa subsp. japonica (Rice)
+A0A1D2A650,Auxenochlorella protothecoides (Green microalga) (Chlorella protothecoides)
+A0A1F9M9S9,Deltaproteobacteria bacterium RIFOXYA12_FULL_61_11
+A0A225UPM8,Phytophthora megakarya
+A0A2E2KF41,Spongiibacter sp
+A0A2J7ZSM0,Tetrabaena socialis
+A0A2P6VP59,Micractinium conductrix
+A0A2S8B3V3,Sphingopyxis lindanitolerans
+A0A2V3IIU4,Gracilariopsis chorda
+A0A349B5G7,Acidimicrobiaceae bacterium
+A0A366ZL64,Blastococcus sp. TF02-09
+A0A3C1HH98,Verrucomicrobiales bacterium
+A0A3P6F7Q2,Brassica oleracea (Wild cabbage)
+A0A424HAN7,Synechococcus sp. TMED155
+A0A438J5W3,Vitis vinifera (Grape)
+A0A4U6X9M0,Colletotrichum tanaceti
+A0A4V3XGD6,Bondarzewia mesenterica
+A0A5D2EAC4,Gossypium darwinii (Darwin's cotton) (Gossypium barbadense var. darwinii)
+A0A5F7ZQ19,Macaca mulatta (Rhesus macaque)
+A0A5J4YMG5,Porphyridium purpureum (Red alga) (Porphyridium cruentum)
+A0A5J4ZAD4,Porphyridium purpureum (Red alga) (Porphyridium cruentum)
+A0A640SR02,Streptomyces glebosus
+A0A6A4Q2I5,Lupinus albus (White lupine) (Lupinus termis)
+A0A6D2J514,Microthlaspi erraticum
+A0A6H5K8Y1,Ectocarpus sp. CCAP 1310/34
+A0A7C9EXT9,Opuntia streptacantha (Prickly pear cactus) (Opuntia cardona)
+A0A7C9F8E8,Opuntia streptacantha (Prickly pear cactus) (Opuntia cardona)
+A0A7X6R258,Nocardia gamkensis
+A0A835Y362,Edaphochlamys debaryana
+A0A836C7I1,Edaphochlamys debaryana
+A8HQR3,Chlamydomonas reinhardtii (Chlamydomonas smithii)
+B5Y4V2,Phaeodactylum tricornutum (strain CCAP 1055/1)
+D2V6Z4,Naegleria gruberi (Amoeba)
+E1Z9C6,Chlorella variabilis (Green alga)
+F4I6A3,Arabidopsis thaliana (Mouse-ear cress)
+M1VE17,Cyanidioschyzon merolae (strain NIES-3377 / 10D) (Unicellular red alga)
+Q8KEZ5,Chlorobaculum tepidum (strain ATCC 49652 / DSM 12025 / NBRC 103806 / TLS) (Chlorobium tepidum)
+W2IKI5,Phytophthora nicotianae (Potato buckeye rot agent) (Phytophthora parasitica)
+A0A3L8RZ23,Chloebia gouldiae (Gouldian finch) (Erythrura gouldiae)
+A0A4U1FBD4,Monodon monoceros (Narwhal) (Ceratodon monodon)
+A0A663N988,Athene cunicularia (Burrowing owl) (Speotyto cunicularia)
+A0A6A6L6Y8,Hevea brasiliensis (Para rubber tree) (Siphonia brasiliensis)
+A0A7J5YA44,Dissostichus mawsoni (Antarctic cod)
+A0A059B0T7,Eucalyptus grandis (Flooded gum)
+A0A072TT54,Medicago truncatula (Barrel medic) (Medicago tribuloides)
+A0A078HUA9,Brassica napus (Rape)
+A0A081ABC5,Phytophthora nicotianae P1976
+A0A0V1CYF0,Trichinella britovi (Parasitic roundworm)
+A0A0V1JDZ5,Trichinella pseudospiralis (Parasitic roundworm)
+A0A150FX50,Gonium pectorale (Green alga)
+A0A1Q9EQ50,Symbiodinium microadriaticum (Dinoflagellate) (Zooxanthella microadriatica)
+A0A2C9WNE9,Manihot esculenta (Cassava) (Jatropha manihot)
+A0A2K3NI47,Trifolium pratense (Red clover)
+A0A2P6TRG3,Chlorella sorokiniana (Freshwater green alga)
+A0A2V0NQB2,Raphidocelis subcapitata
+A0A317GTS1,Pseudomonadota bacterium
+A0A353B5Y9,Planctomycetaceae bacterium
+A0A3D1IV36,Oxalobacteraceae bacterium
+A0A431L5L9,Candidatus Melainabacteria bacterium
+A0A4R5D9X1,Jiangella asiatica
+A0A504BKX7,Mesorhizobium sp. B2-1-3A
+A0A538AZH8,Actinomycetes bacterium
+A0A5E8CHR7,seawater metagenome
+A0A5J4Y2J2,Trebouxia sp. A1-2
+A0A5N6RUL5,Carpinus fangiana
+A0A661MWX7,Deltaproteobacteria bacterium
+A0A6A2X4T7,Hibiscus syriacus (Rose of Sharon)
+A0A6A6KCU0,Hevea brasiliensis (Para rubber tree) (Siphonia brasiliensis)
+A0A6D2JGK1,Microthlaspi erraticum
+A0A6H9WGW0,Pseudoclavibacter endophyticus
+A0A6P0GEE9,Geodermatophilus normandii
+A0A6P5YE08,Durio zibethinus (Durian)
+A0A6P5YE97,Durio zibethinus (Durian)
+A0A7I4CZJ1,Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)
+A0A7J6DK71,Cannabis sativa (Hemp) (Marijuana)
+A0A7J8YTP5,Gossypium aridum (American cotton) (Erioxylum aridum)
+A0A7R9YDQ6,Pinguiococcus pyrenoidosus
+A0A7S0KS88,Micromonas pusilla (Picoplanktonic green alga) (Chromulina pusilla)
+A0A804IMW7,Musa acuminata subsp. malaccensis (Wild banana) (Musa malaccensis)
+A0A830I3F8,Pycnococcus provasolii
+A0A833R2P7,Carex littledalei
+A0A835Y8M7,Edaphochlamys debaryana
+B3RQ33,Trichoplax adhaerens (Trichoplax reptans)
+E6PRN9,mine drainage metagenome
+M1B5T8,Solanum tuberosum (Potato)
+A0A7M5WZU6,Clytia hemisphaerica
+B4MNH4,Drosophila willistoni (Fruit fly)
+F8MDE9,Neurospora tetrasperma (strain FGSC 2508 / ATCC MYA-4615 / P0657)
+Q8MLV6,Drosophila melanogaster (Fruit fly)
+A0A024TBS2,Aphanomyces invadans
+A0A078FF27,Brassica napus (Rape)
+A0A078HUM8,Brassica napus (Rape)
+A0A090M3U7,Ostreococcus tauri
+A0A0D6QSV4,Araucaria cunninghamii (Hoop pine) (Moreton Bay pine)
+A0A199VXB3,Ananas comosus (Pineapple) (Ananas ananas)
+A0A1Q3C0G7,Cephalotus follicularis (Albany pitcher plant)
+A0A1Y1I5E0,Klebsormidium nitens (Green alga) (Ulothrix nitens)
+A0A251XVX2,Clavibacter michiganensis
+A0A2K3DAN8,Chlamydomonas reinhardtii (Chlamydomonas smithii)
+A0A2P6RF28,Rosa chinensis (China rose)
+A0A2P6V355,Micractinium conductrix
+A0A2V0P340,Raphidocelis subcapitata
+A0A2V0P381,Raphidocelis subcapitata
+A0A329S3X2,Phytophthora cactorum
+A0A392MMN4,Trifolium medium
+A0A399FZ98,candidate division NPL-UPA2 bacterium Unc8
+A0A3M1MM02,Planctomycetota bacterium
+A0A444XIW0,Arachis hypogaea (Peanut)
+A0A523DZM4,Acidobacteriota bacterium
+A0A5D2K8T9,Gossypium tomentosum (Hawaiian cotton) (Gossypium sandvicense)
+A0A5J4XP58,Trebouxia sp. A1-2
+A0A5J4Z149,Porphyridium purpureum (Red alga) (Porphyridium cruentum)
+A0A5J5AVW0,Nyssa sinensis
+A0A5S9VR36,Arabidopsis thaliana (Mouse-ear cress)
+A0A6G9YKK3,Nocardia arthritidis
+A0A6J0LK17,Raphanus sativus (Radish) (Raphanus raphanistrum var. sativus)
+A0A6N2LBI2,Salix viminalis (Common osier) (Basket willow)
+A0A6P4ARU3,Ziziphus jujuba (Chinese jujube) (Ziziphus sativa)
+A0A7I4FIP8,Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)
+A0A7I8KS71,Spirodela intermedia (Intermediate duckweed)
+A0A7K0DYB4,Nocardia aurantia
+A0A7R9SXG2,Pycnococcus provasolii
+A0A7R9YQ50,Chlamydomonas euryale
+A0A7S1X3D0,Tetraselmis chuii
+A0A7S2XRU7,Attheya septentrionalis
+B7FNC8,Medicago truncatula (Barrel medic) (Medicago tribuloides)
+C1MHV5,Micromonas pusilla (strain CCMP1545) (Picoplanktonic green alga)
+D0P0X9,Phytophthora infestans (strain T30-4) (Potato late blight agent)
+D8UEG8,Volvox carteri f. nagariensis
+I0YQ58,Coccomyxa subellipsoidea (strain C-169) (Green microalga)
+M4DIL0,Brassica campestris (Field mustard)
+R0IK04,Capsella rubella
+W2YYK0,Phytophthora nicotianae P10297
+A0A369S2K0,Trichoplax sp. H2
+A0A498HJR7,Malus domestica (Apple) (Pyrus malus)
+A0A7R8XDZ0,Darwinula stevensoni
+A0A803XTE8,Meleagris gallopavo (Wild turkey)
+D4A135,Rattus norvegicus (Rat)
+A0A059LNP1,Helicosporidium sp. ATCC 50920
+A0A0W8CPU1,Phytophthora nicotianae (Potato buckeye rot agent) (Phytophthora parasitica)
+A0A178W6B6,Arabidopsis thaliana (Mouse-ear cress)
+A0A1S3E2I9,Cicer arietinum (Chickpea) (Garbanzo)
+A0A1X6P5E5,Porphyra umbilicalis (Purple laver) (Red alga)
+A0A1Y1IJ95,Klebsormidium nitens (Green alga) (Ulothrix nitens)
+A0A250XPT9,Chlamydomonas eustigma
+A0A2I0VIS0,Dendrobium catenatum
+A0A2K1L0Z4,Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)
+A0A2K3CZD3,Chlamydomonas reinhardtii (Chlamydomonas smithii)
+A0A2P6V6V2,Micractinium conductrix
+A0A2R6WKK2,Marchantia polymorpha (Common liverwort) (Marchantia aquatica)
+A0A2V0P923,Raphidocelis subcapitata
+A0A2Z6P3E6,Trifolium subterraneum (Subterranean clover)
+A0A328E627,Cuscuta australis
+A0A378YF94,Nocardia otitidiscaviarum
+A0A383W7M5,Tetradesmus obliquus (Green alga) (Acutodesmus obliquus)
+A0A421EZ99,Phytophthora kernoviae
+A0A444XIV8,Arachis hypogaea (Peanut)
+A0A445BLH7,Arachis hypogaea (Peanut)
+A0A4P9JFN6,Poa pratensis (Kentucky bluegrass) (Phalaris japonica)
+A0A4Q5WKE6,Chitinophagaceae bacterium
+A0A4Z0F757,Candidatus Macondimonas diazotrophica
+A0A5B9MBV6,Stieleria maiorica
+A0A5J9VLD6,Eragrostis curvula (weeping love grass)
+A0A6D2JAK3,Microthlaspi erraticum
+A0A6G0WW48,Aphanomyces euteiches
+A0A6I9QHV8,Elaeis guineensis var. tenera (Oil palm)
+A0A6P8C3N4,Punica granatum (Pomegranate)
+A0A7C5PRT3,Gammaproteobacteria bacterium
+A0A7I4C5B0,Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)
+A0A7S1ETV3,Timspurckia oligopyrenoides
+A0A7S1XIM4,Erythrolobus australicus
+A0A7S3UH11,Picocystis salinarum
+A0A816M4Q8,Brassica napus (Rape)
+A0A817GDX9,Rotaria sp. Silwood2
+A0A833QSB1,Carex littledalei
+D7KNG9,Arabidopsis lyrata subsp. lyrata (Lyre-leaved rock-cress)
+I0YQ30,Coccomyxa subellipsoidea (strain C-169) (Green microalga)
+Q9ZUD7,Arabidopsis thaliana (Mouse-ear cress)
+V4KWK5,Eutrema salsugineum (Saltwater cress) (Sisymbrium salsugineum)
+Q8CI52,Mus musculus (Mouse)
+A0A1B6M2L3,Graphocephala atropunctata
+A0A1U8FBY6,Capsicum annuum (Capsicum pepper)
+A0A7L0LCL5,Sylvietta virens (Green crombec)
+A0A7R9V5L9,Chlamydomonas euryale
+W5KKS2,Astyanax mexicanus (Blind cave fish) (Astyanax fasciatus mexicanus)
+A0A087HQN7,Arabis alpina (Alpine rock-cress)
+A0A0D2NT28,Monoraphidium neglectum
+A0A0G3HAK8,Corynebacterium testudinoris
+A0A1J4MAM9,Cryptosporidium ubiquitum
+A0A251QF78,Prunus persica (Peach) (Amygdalus persica)
+A0A2I0AGF3,Apostasia shenzhenica
+A0A2P6U2P1,Chlorella sorokiniana (Freshwater green alga)
+A0A2R6WMA1,Marchantia polymorpha (Common liverwort) (Marchantia aquatica)
+A0A2U1NA75,Artemisia annua (Sweet wormwood)
+A0A314Z031,Prunus yedoensis var. nudiflora
+A0A354AXR5,Synechococcales bacterium UBA10510
+A0A397YDM9,Brassica campestris (Field mustard)
+A0A3N7G0M8,Populus trichocarpa (Western balsam poplar) (Populus balsamifera subsp. trichocarpa)
+A0A3P5Y3L9,Brassica campestris (Field mustard)
+A0A3P6BP30,Brassica campestris (Field mustard)
+A0A3P7E011,Wuchereria bancrofti
+A0A3Q7H6R7,Solanum lycopersicum (Tomato) (Lycopersicon esculentum)
+A0A485MER1,Lynx pardinus (Iberian lynx) (Felis pardina)
+A0A538A5H0,Actinomycetes bacterium
+A0A5B7AT03,Davidia involucrata (Dove tree)
+A0A5J5VHC7,Gossypium barbadense (Sea Island cotton) (Hibiscus barbadensis)
+A0A5Q4F1K6,Gammaproteobacteria bacterium
+A0A6G0WTG2,Aphanomyces euteiches
+A0A6G1F9W2,Oryza meyeriana var. granulata
+A0A6N2B4S0,Solanum chilense (Tomato) (Lycopersicon chilense)
+A0A6V7NZ61,Ananas comosus var. bracteatus
+A0A7C5S8C8,Chlorobiota bacterium
+A0A7V5M4M5,bacterium
+A0A812DDW5,Sepia pharaonis (Pharaoh cuttlefish)
+A0A833W9Y0,Phytophthora infestans (Potato late blight agent) (Botrytis infestans)
+A0A835YLS3,Edaphochlamys debaryana
+A9SYZ5,Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)
+C9J7B8,Homo sapiens (Human)
+D8LAW9,Ectocarpus siliculosus (Brown alga) (Conferva siliculosa)
+E1ZLS6,Chlorella variabilis (Green alga)
+I1KBQ6,Glycine max (Soybean) (Glycine hispida)
+M1UMV1,Cyanidioschyzon merolae (strain NIES-3377 / 10D) (Unicellular red alga)
+Q10AX3,Oryza sativa subsp. japonica (Rice)
+R7W4T2,Aegilops tauschii (Tausch's goatgrass) (Aegilops squarrosa)
+Q9C5A5,Arabidopsis thaliana (Mouse-ear cress)
+A0A452J3I8,Gopherus agassizii (Agassiz's desert tortoise)
+A0A663DRH4,Aquila chrysaetos chrysaetos
+A0A6J1VYX1,Notechis scutatus (mainland tiger snake)
+A0A6J3E8G0,Aythya fuligula (Tufted duck) (Anas fuligula)
+A0A7C8YLT5,Opuntia streptacantha (Prickly pear cactus) (Opuntia cardona)
+A0A7J7INZ2,Cyanidiococcus yangmingshanensis
+B3MIX6,Drosophila ananassae (Fruit fly)
+V5EQ17,Kalmanozyma brasiliensis (strain GHG001) (Yeast) (Pseudozyma brasiliensis)
+A0A022R561,Erythranthe guttata (Yellow monkey flower) (Mimulus guttatus)
+A0A078GKK0,Brassica napus (Rape)
+A0A1I8FYH8,Macrostomum lignano
+A0A2E7UXN1,Deltaproteobacteria bacterium
+A0A2G5CIT3,Aquilegia coerulea (Rocky mountain columbine)
+A0A2K1KFM4,Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)
+A0A2N5KPT0,Actinomycetes bacterium
+A0A2P2MZG8,Rhizophora mucronata (Asiatic mangrove)
+A0A2P4XFY1,Phytophthora palmivora
+A0A2W5XU59,Chloroflexota bacterium
+A0A2Y9L8T1,Enhydra lutris kenyoni (northern sea otter)
+A0A383VA10,Tetradesmus obliquus (Green alga) (Acutodesmus obliquus)
+A0A3P6BLN8,Brassica campestris (Field mustard)
+A0A445L3B7,Glycine soja (Wild soybean)
+A0A453MEJ3,Aegilops tauschii subsp. strangulata (Goatgrass)
+A0A453T9F0,Aegilops tauschii subsp. strangulata (Goatgrass)
+A0A498JTH6,Malus domestica (Apple) (Pyrus malus)
+A0A4Q5WY92,Alphaproteobacteria bacterium
+A0A5B6UPD2,Gossypium australe
+A0A5B7ASG5,Davidia involucrata (Dove tree)
+A0A5D6Y1U8,[Pythium] brassicae (nom. inval.)
+A0A5J5TB22,Gossypium barbadense (Sea Island cotton) (Hibiscus barbadensis)
+A0A6G0K9K1,Phytophthora fragariae
+A0A6G0X7S7,Aphanomyces euteiches
+A0A6P6V4L4,Coffea arabica (Arabian coffee)
+A0A7C4TKK4,Actinomycetes bacterium
+A0A7G2DYI6,Arabidopsis thaliana (Mouse-ear cress)
+A0A7N2N1E6,Quercus lobata (Valley oak)
+A0A7S0XQK2,Hemiselmis andersenii (Cryptophyte alga)
+A0A804JY60,Musa acuminata subsp. malaccensis (Wild banana) (Musa malaccensis)
+A0A835SZJ1,Chlamydomonas schloesseri
+A0A835XZ67,Edaphochlamys debaryana
+A0A835YFM1,Edaphochlamys debaryana
+D8SWA5,Selaginella moellendorffii (Spikemoss)
+F4I690,Arabidopsis thaliana (Mouse-ear cress)
+K0SQH2,Thalassiosira oceanica (Marine diatom)
+M1BCT6,Solanum tuberosum (Potato)
+M4DIK8,Brassica campestris (Field mustard)
+Q10AX2,Oryza sativa subsp. japonica (Rice)
+W1P370,Amborella trichopoda
+A0A4S2KNE6,Temnothorax longispinosus
+A0A066VRZ4,Tilletiaria anomala (strain ATCC 24038 / CBS 436.72 / UBC 951)
+A0A090MYJ6,Strongyloides ratti (Parasitic roundworm)
+A0A3B4BNI9,Periophthalmus magnuspinnatus
+A0A6G1F6W8,Oryza meyeriana var. granulata
+A0A6J2WVI2,Chanos chanos (Milkfish) (Mugil chanos)
+A0A7J8ADU1,Rhinolophus ferrumequinum (Greater horseshoe bat)
+A0A7K8DZY8,Leucopsar rothschildi (Bali myna) (Rothschild's mynah)
+A0A836D7E9,Ovis aries (Sheep)
+S8E253,Genlisea aurea
+V4KSW7,Eutrema salsugineum (Saltwater cress) (Sisymbrium salsugineum)
+A0A023ELN3,Aedes albopictus (Asian tiger mosquito) (Stegomyia albopicta)
+A0A061E653,Theobroma cacao (Cacao) (Cocoa)
+A0A068V963,Coffea canephora (Robusta coffee)
+A0A0K9PQK5,Zostera marina (Eelgrass)
+A0A0W8D2K8,Phytophthora nicotianae (Potato buckeye rot agent) (Phytophthora parasitica)
+A0A1D1Z7C2,Anthurium amnicola
+A0A1Q9DVP0,Symbiodinium microadriaticum (Dinoflagellate) (Zooxanthella microadriatica)
+A0A2C9UUF9,Manihot esculenta (Cassava) (Jatropha manihot)
+A0A2I4FD84,Juglans regia (English walnut)
+A0A2P6V3X7,Micractinium conductrix
+A0A383VUS0,Tetradesmus obliquus (Green alga) (Acutodesmus obliquus)
+A0A3N7EYI0,Populus trichocarpa (Western balsam poplar) (Populus balsamifera subsp. trichocarpa)
+A0A3P6FFC5,Brassica oleracea (Wild cabbage)
+A0A493SSB5,Anas platyrhynchos platyrhynchos (Northern mallard)
+A0A537BTB5,Betaproteobacteria bacterium
+A0A5D3CPB7,Cucumis melo var. makuwa (Oriental melon)
+A0A5E4F5Q3,Prunus dulcis (Almond) (Amygdalus dulcis)
+A0A5J4XUY7,Trebouxia sp. A1-2
+A0A5N6QFS2,Carpinus fangiana
+A0A6D2J8D1,Microthlaspi erraticum
+A0A6H5J814,Ectocarpus sp. CCAP 1310/34
+A0A6J0PDZ5,Elaeis guineensis var. tenera (Oil palm)
+A0A6U9PA14,Picocystis salinarum
+A0A7C9EWV1,Opuntia streptacantha (Prickly pear cactus) (Opuntia cardona)
+A0A7R9Z494,Chlamydomonas euryale
+A0A7S0T8V4,Ostreococcus mediterraneus
+A0A7S1XFP0,Compsopogon caeruleus
+A0A7S2XP63,Attheya septentrionalis
+A0A7X1ZHD4,Roseospira navarrensis
+A0A803R022,Cannabis sativa (Hemp) (Marijuana)
+A0A812PRZ6,Symbiodinium natans
+A0A818XD90,Adineta steineri
+A0A835U902,Vanilla planifolia (Vanilla)
+A0A835XVI5,Edaphochlamys debaryana
+M2W571,Galdieria sulphuraria (Red alga)
+V4KKD7,Eutrema salsugineum (Saltwater cress) (Sisymbrium salsugineum)
+W2R4X2,Phytophthora nicotianae (strain INRA-310) (Phytophthora parasitica)
+Q08001,Saccharomyces cerevisiae (strain ATCC 204508 / S288c) (Baker's yeast)
+A0A0E0HLF5,Oryza nivara (Indian wild rice) (Oryza sativa f. spontanea)
+A0A1A5ZXI7,Kwoniella dejecticola CBS 10117
+A0A1D6LBB0,Zea mays (Maize)
+A0A6B0RMA6,Bos mutus (wild yak)
+A0A6P8QFN7,Geotrypetes seraphini (Gaboon caecilian) (Caecilia seraphini)
+A0A024UND3,Aphanomyces invadans
+A0A078K0U1,Brassica napus (Rape)
+A0A0E0QZW9,Oryza rufipogon (Brownbeard rice) (Asian wild rice)
+A0A0N5C9W8,Strongyloides papillosus (Intestinal threadworm)
+A0A117PN67,Streptomyces pseudovenezuelae
+A0A1D1YE41,Anthurium amnicola
+A0A1D2AAM1,Auxenochlorella protothecoides (Green microalga) (Chlorella protothecoides)
+A0A1E5ULF9,Dichanthelium oligosanthes
+A0A1I3U3I4,Halobacillus dabanensis
+A0A1Y1IAU5,Klebsormidium nitens (Green alga) (Ulothrix nitens)
+A0A2D5H9E3,Novosphingobium sp
+A0A2U1M1T1,Artemisia annua (Sweet wormwood)
+A0A2Y9PW85,Delphinapterus leucas (Beluga whale)
+A0A327KX22,Rhodoplanes elegans
+A0A382NBQ4,marine metagenome
+A0A3B3W0B4,Poecilia latipinna (sailfin molly)
+A0A3M1P562,Cyanobacteria bacterium J069
+A0A3P6BF08,Brassica campestris (Field mustard)
+A0A3P6GID3,Brassica oleracea (Wild cabbage)
+A0A4P5TL26,Bacteroidota bacterium
+A0A4S8IP94,Musa balbisiana (Banana)
+A0A4U5QTH5,Populus alba (White poplar)
+A0A507EHA1,Powellomyces hirtus
+A0A5A7V2I7,Cucumis melo var. makuwa (Oriental melon)
+A0A5C7HHS1,Acer yangbiense
+A0A5J4Z647,Porphyridium purpureum (Red alga) (Porphyridium cruentum)
+A0A5J5APX5,Nyssa sinensis
+A0A5K1BB04,Nymphaea colorata (pocket water lily)
+A0A6A3D8W0,Hibiscus syriacus (Rose of Sharon)
+A0A6J0PGH7,Elaeis guineensis var. tenera (Oil palm)
+A0A6P5WYF7,Durio zibethinus (Durian)
+A0A7I8KTH4,Spirodela intermedia (Intermediate duckweed)
+A0A7J0EZ40,Actinidia rufa
+A0A7J7DC80,Tripterygium wilfordii (Thunder God vine)
+A0A7J8LES1,Gossypium lobatum
+A0A7S0DAI9,Micromonas pusilla (Picoplanktonic green alga) (Chromulina pusilla)
+A0A803SL98,Anolis carolinensis (Green anole) (American chameleon)
+A0A835YK38,Edaphochlamys debaryana
+A0A843WWK9,Colocasia esculenta (Wild taro) (Arum esculentum)
+E1ZBV3,Chlorella variabilis (Green alga)
+J3LUL0,Oryza brachyantha (malo sina)
+Q9ZUD2,Arabidopsis thaliana (Mouse-ear cress)
+O42976,Schizosaccharomyces pombe (strain 972 / ATCC 24843) (Fission yeast)
+A0A091E6M5,Fukomys damarensis (Damaraland mole rat) (Cryptomys damarensis)
+A0A1X2G8Z5,Hesseltinella vesiculosa
+A0A1X6NJG9,Porphyra umbilicalis (Purple laver) (Red alga)
+A0A672UYS9,Strigops habroptila (Kakapo)
+A0A6J3AQX8,Vicugna pacos (Alpaca) (Lama pacos)
+A0A6V7P7J1,Ananas comosus var. bracteatus
+G0USD0,Trypanosoma congolense (strain IL3000)
+M7C0E4,Chelonia mydas (Green sea-turtle) (Chelonia agassizi)
+T1PHV0,Musca domestica (House fly)
+W1NW81,Amborella trichopoda
+A0A059AJ80,Eucalyptus grandis (Flooded gum)
+A0A061DL00,Theobroma cacao (Cacao) (Cocoa)
+A0A061S622,Tetraselmis sp. GSL018
+A0A176VJI2,Marchantia polymorpha subsp. ruderalis
+A0A176VNE1,Marchantia polymorpha subsp. ruderalis
+A0A176WA50,Marchantia polymorpha subsp. ruderalis
+A0A176WGY9,Marchantia polymorpha subsp. ruderalis
+A0A1S4ADV3,Nicotiana tabacum (Common tobacco)
+A0A2A9M6Y4,Besnoitia besnoiti
+A0A2K1KDT6,Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)
+A0A2P6Q7C6,Rosa chinensis (China rose)
+A0A2T4VBK6,Vitiosangium sp. (strain GDMCC 1.1324)
+A0A2V0P4N3,Raphidocelis subcapitata
+A0A371E2Y9,Mucuna pruriens (Velvet bean) (Dolichos pruriens)
+A0A371E9L2,Mucuna pruriens (Velvet bean) (Dolichos pruriens)
+A0A3M1XQW3,Calditrichota bacterium
+A0A453PL72,Aegilops tauschii subsp. strangulata (Goatgrass)
+A0A537Z893,Actinomycetes bacterium
+A0A5B8MST2,Chloropicon primus
+A0A5P1ET14,Asparagus officinalis (Garden asparagus)
+A0A699YBC4,Haematococcus lacustris (Green alga) (Haematococcus pluvialis)
+A0A6A6LUH7,Hevea brasiliensis (Para rubber tree) (Siphonia brasiliensis)
+A0A6J1H581,Cucurbita moschata (Winter crookneck squash) (Cucurbita pepo var. moschata)
+A0A6P8E8I1,Punica granatum (Pomegranate)
+A0A6P9FAI4,Juglans regia (English walnut)
+A0A6V7Q996,Ananas comosus var. bracteatus
+A0A7N0RD58,Kalanchoe fedtschenkoi (Lavender scallops) (South American air plant)
+A0A7S2G035,Dictyocha speculum
+A0A803KNF3,Chenopodium quinoa (Quinoa)
+A0A803TPH2,Anolis carolinensis (Green anole) (American chameleon)
+A0A804M704,Zea mays (Maize)
+A0A804M708,Zea mays (Maize)
+A0A835DGA6,Tetracentron sinense (Spur-leaf)
+A0A843TU58,Colocasia esculenta (Wild taro) (Arum esculentum)
+A0E2T2,Paramecium tetraurelia
+M4D7C3,Brassica campestris (Field mustard)
+W5P8J8,Ovis aries (Sheep)
+W9QNA8,Morus notabilis
+A0A0K8UN33,Bactrocera latifrons (Malaysian fruit fly) (Chaetodacus latifrons)
+A0A120K222,Eremothecium sinecaudum
+A0A1X2GM15,Hesseltinella vesiculosa
+A0A2R6WI97,Marchantia polymorpha (Common liverwort) (Marchantia aquatica)
+A0A316VTA5,Ceraceosorus guamensis
+A0A3Q7RKY2,Vulpes vulpes (Red fox)
+A0A423SN60,Penaeus vannamei (Whiteleg shrimp) (Litopenaeus vannamei)
+A0A672UX81,Strigops habroptila (Kakapo)
+A0A6J5WWF5,Prunus armeniaca (Apricot) (Armeniaca vulgaris)
+A0A843W3B3,Colocasia esculenta (Wild taro) (Arum esculentum)
+M9MGL1,Pseudozyma antarctica (strain T-34) (Yeast) (Candida antarctica)
+A0A199W3L6,Ananas comosus (Pineapple) (Ananas ananas)
+A0A218WVG9,Punica granatum (Pomegranate)
+A0A287A5S1,Sus scrofa (Pig)
+A0A2I0TIZ5,Limosa lapponica baueri
+A0A2N9G8F4,Fagus sylvatica (Beechnut)
+A0A2P6VR38,Micractinium conductrix
+A0A2T2R6U5,Actinobacteria bacterium QS_8_72_14
+A0A318NDS6,Micromonospora arborensis
+A0A3B8HCU5,Syntrophobacteraceae bacterium
+A0A3L6QT26,Panicum miliaceum (Proso millet) (Broomcorn millet)
+A0A3R7H4V2,Phytophthora kernoviae
+A0A480QTH2,Sus scrofa (Pig)
+A0A4S8IRK6,Musa balbisiana (Banana)
+A0A4X2LQF1,Vombatus ursinus (Common wombat)
+A0A5J4XEP4,Trebouxia sp. A1-2
+A0A5J4XX96,Trebouxia sp. A1-2
+A0A662YFY8,Nothophytophthora sp. (strain Chile5)
+A0A6I9T7N5,Sesamum indicum (Oriental sesame) (Sesamum orientale)
+A0A6J1EGQ9,Cucurbita moschata (Winter crookneck squash) (Cucurbita pepo var. moschata)
+A0A6V1KTJ0,Heterosigma akashiwo (Chromophytic alga) (Heterosigma carterae)
+A0A7J0EY14,Actinidia rufa
+A0A7J5ZF45,Dissostichus mawsoni (Antarctic cod)
+A0A7J6FM78,Cannabis sativa (Hemp) (Marijuana)
+A0A7S2SEL4,Rhizochromulina marina
+A0A804PMZ1,Zea mays (Maize)
+A0A813JSD1,Polarella glacialis (Dinoflagellate)
+A0A816MLH1,Brassica napus (Rape)
+A0A816YSU5,Brassica napus (Rape)
+A0A847FTK6,Anaerolineaceae bacterium
+B7FVS2,Phaeodactylum tricornutum (strain CCAP 1055/1)
+D8TL00,Volvox carteri f. nagariensis
+F6TUB9,Equus caballus (Horse)
+A0A1X2I9Q4,Absidia repens
+A0A6A5HSP9,Caenorhabditis remanei (Caenorhabditis vulgaris)
+A0A7R9DK58,Timema poppense (Walking stick)
+A0A803V9P5,Ficedula albicollis (Collared flycatcher) (Muscicapa albicollis)
+B6K0D6,Schizosaccharomyces japonicus (strain yFS275 / FY16936) (Fission yeast)
+G0NZ98,Caenorhabditis brenneri (Nematode worm)
+G8BS45,Tetrapisispora phaffii (strain ATCC 24235 / CBS 4417 / NBRC 1672 / NRRL Y-8282 / UCD 70-5) (Yeast) (Fabospora phaffii)
+W3VU37,Moesziomyces aphidis (Pseudozyma aphidis)
+A0A024TR91,Aphanomyces invadans
+A0A024TRB3,Aphanomyces invadans
+A0A067H4I6,Citrus sinensis (Sweet orange) (Citrus aurantium var. sinensis)
+A0A077ZWA1,Stylonychia lemnae (Ciliate)
+A0A0D2VSY0,Capsaspora owczarzaki (strain ATCC 30864)
+A0A0D3D732,Brassica oleracea var. oleracea
+A0A0G4H7W0,Vitrella brassicaformis (strain CCMP3155)
+A0A199W7Z3,Ananas comosus (Pineapple) (Ananas ananas)
+A0A1D1Z4P5,Anthurium amnicola
+A0A1E5UR43,Dichanthelium oligosanthes
+A0A251PE90,Prunus persica (Peach) (Amygdalus persica)
+A0A2G2YVW2,Capsicum annuum (Capsicum pepper)
+A0A2G5CIR9,Aquilegia coerulea (Rocky mountain columbine)
+A0A2U1NA69,Artemisia annua (Sweet wormwood)
+A0A383WIF1,Tetradesmus obliquus (Green alga) (Acutodesmus obliquus)
+A0A388K0Q5,Chara braunii (Braun's stonewort)
+A0A3N5XSB0,Acidobacteriota bacterium
+A0A445FSX7,Glycine soja (Wild soybean)
+A0A453MEJ7,Aegilops tauschii subsp. strangulata (Goatgrass)
+A0A4D9CWA6,Nannochloropsis salina CCMP1776
+A0A4D9CZC4,Nannochloropsis salina CCMP1776
+A0A5A7PHL9,Striga asiatica (Asiatic witchweed) (Buchnera asiatica)
+A0A5D3BW38,Cucumis melo var. makuwa (Oriental melon)
+A0A5J9TDZ0,Eragrostis curvula (weeping love grass)
+A0A5N5L687,Salix brachista
+A0A7J7G3T1,Camellia sinensis (Tea plant) (Thea sinensis)
+A0A7S0ZB29,Timspurckia oligopyrenoides
+A0A7S4J6B0,Prymnesium polylepis
+A0A811NCD3,Miscanthus lutarioriparius
+A0A811NTD6,Miscanthus lutarioriparius
+A0A812K134,Symbiodinium natans
+A0A812WL88,Symbiodinium sp. CCMP2456
+A0A816VJN7,Brassica napus (Rape)
+I0YS99,Coccomyxa subellipsoidea (strain C-169) (Green microalga)
+I0YV38,Coccomyxa subellipsoidea (strain C-169) (Green microalga)
+M7ZWZ9,Triticum urartu (Red wild einkorn) (Crithodium urartu)
+R7QSA5,Chondrus crispus (Carrageen Irish moss) (Polymorpha crispa)
+U6MIT4,Eimeria necatrix
+W1PF74,Amborella trichopoda
+W7KS28,Cytobacillus firmus DS1
+A0A0Q9WAI7,Drosophila virilis (Fruit fly)
+A0A1I8N1Z4,Musca domestica (House fly)
+A0A1I8PK73,Stomoxys calcitrans (Stable fly) (Conops calcitrans)
+A0A226EUH7,Folsomia candida (Springtail)
+A0A267FMN8,Macrostomum lignano
+A0A2K6L1R2,Rhinopithecus bieti (Black snub-nosed monkey) (Pygathrix bieti)
+A0A6J1LUE2,Drosophila hydei (Fruit fly)
+A0A6S7GTF8,Paramuricea clavata (Red gorgonian) (Violescent sea-whip)
+A0A7S3WU34,Strombidinopsis acuminata
+K1PQ66,Magallana gigas (Pacific oyster) (Crassostrea gigas)
+Q75CZ1,Eremothecium gossypii (strain ATCC 10895 / CBS 109.51 / FGSC 9923 / NRRL Y-1056) (Yeast) (Ashbya gossypii)
+A0A078GK75,Brassica napus (Rape)
+A0A0D2X140,Capsaspora owczarzaki (strain ATCC 30864)
+A0A0D3DR32,Brassica oleracea var. oleracea
+A0A0E2BQL7,Leptospira santarosai str. MOR084
+A0A0N4UX34,Enterobius vermicularis (Human pinworm)
+A0A178V0J7,Arabidopsis thaliana (Mouse-ear cress)
+A0A178VPX4,Arabidopsis thaliana (Mouse-ear cress)
+A0A1Q9DL71,Symbiodinium microadriaticum (Dinoflagellate) (Zooxanthella microadriatica)
+A0A2A8VB18,Bacillus sp. AFS015802
+A0A2N9IQ63,Fagus sylvatica (Beechnut)
+A0A2P6U306,Chlorella sorokiniana (Freshwater green alga)
+A0A314YCJ2,Prunus yedoensis var. nudiflora
+A0A397HA49,Diversispora epigaea
+A0A444XXB1,Arachis hypogaea (Peanut)
+A0A484MFM6,Cuscuta campestris
+A0A5A7PIQ6,Striga asiatica (Asiatic witchweed) (Buchnera asiatica)
+A0A5N5GAP2,Pyrus ussuriensis x Pyrus communis
+A0A654ECM3,Arabidopsis thaliana (Mouse-ear cress)
+A0A654EYA8,Arabidopsis thaliana (Mouse-ear cress)
+A0A6A3CXY4,Hibiscus syriacus (Rose of Sharon)
+A0A6A5B8W1,Naegleria fowleri (Brain eating amoeba)
+A0A6A5CC68,Naegleria fowleri (Brain eating amoeba)
+A0A6G9YGN6,Nocardia arthritidis
+A0A6I8SS03,Xenopus tropicalis (Western clawed frog) (Silurana tropicalis)
+A0A6U3TX07,Ditylum brightwellii
+A0A7I4B7P3,Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)
+A0A7I4B9Y5,Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)
+A0A7J0H0L7,Actinidia rufa
+A0A7N2KQL8,Quercus lobata (Valley oak)
+A0A7S1TBJ8,Compsopogon caeruleus
+A0A804JIA3,Musa acuminata subsp. malaccensis (Wild banana) (Musa malaccensis)
+A0A835Y311,Edaphochlamys debaryana
+B9G2X5,Oryza sativa subsp. japonica (Rice)
+K1Q2R9,Magallana gigas (Pacific oyster) (Crassostrea gigas)
+A0A0J9U5L5,Plasmodium vivax North Korean
+A0A0Q9WGI6,Drosophila virilis (Fruit fly)
+A0A103YHV3,Cynara cardunculus var. scolymus (Globe artichoke) (Cynara scolymus)
+A0A1A9UIM5,Glossina austeni (Savannah tsetse fly)
+A0A1A9UX85,Glossina austeni (Savannah tsetse fly)
+A0A1X0NYV9,Trypanosoma theileri
+A0A1X7UR26,Amphimedon queenslandica (Sponge)
+A0A226NDY8,Callipepla squamata (Scaled quail)
+A0A314Z4Q0,Prunus yedoensis var. nudiflora
+A0A397UI84,Gigaspora rosea
+A0A3M6UB36,Pocillopora damicornis (Cauliflower coral) (Millepora damicornis)
+A0A3Q7S6S3,Callorhinus ursinus (Northern fur seal)
+A0A6J0E199,Peromyscus maniculatus bairdii (Prairie deer mouse)
+A0A6J1LS73,Drosophila hydei (Fruit fly)
+A0A7J6SDF1,Perkinsus olseni (Perkinsus atlanticus)
+A0A816UKU0,Brassica napus (Rape)
+C4R365,Komagataella phaffii (strain GS115 / ATCC 20864) (Yeast) (Pichia pastoris)
+M9NE71,Drosophila melanogaster (Fruit fly)
+A0A0U9HIE2,Klebsormidium nitens (Green alga) (Ulothrix nitens)
+A0A150GS54,Gonium pectorale (Green alga)
+A0A1X7U1C9,Amphimedon queenslandica (Sponge)
+A0A1Y1HZZ8,Klebsormidium nitens (Green alga) (Ulothrix nitens)
+A0A1Y1WPR9,Anaeromyces robustus
+A0A1Y5ICW7,Ostreococcus tauri
+A0A2I0WI36,Dendrobium catenatum
+A0A438EEF8,Vitis vinifera (Grape)
+A0A4S4D616,Camellia sinensis var. sinensis
+A0A4S4EZJ5,Camellia sinensis var. sinensis
+A0A4Y1RAT7,Prunus dulcis (Almond) (Amygdalus dulcis)
+A0A5D6XPX7,[Pythium] brassicae (nom. inval.)
+A0A644UK44,bioreactor metagenome
+A0A662X404,Nothophytophthora sp. (strain Chile5)
+A0A6A6K5A5,Hevea brasiliensis (Para rubber tree) (Siphonia brasiliensis)
+A0A6V3JW50,Lotharella globosa
+A0A7J6FHU1,Cannabis sativa (Hemp) (Marijuana)
+A0A7J7NE80,Kingdonia uniflora
+A0A7R9G0G5,Timema shepardi (Walking stick)
+A0A7R9UB98,Pinguiococcus pyrenoidosus
+A0A7V8YIR7,Pseudonocardiales bacterium
+A0A816UMA4,Brassica napus (Rape)
+A0A817AP96,Brassica napus (Rape)
+A0A830H635,Pycnococcus provasolii
+D2VSP1,Naegleria gruberi (Amoeba)
+K7KR90,Glycine max (Soybean) (Glycine hispida)
+Q6K2P1,Oryza sativa subsp. japonica (Rice)
+U6N054,Eimeria necatrix
+W7TTP4,Nannochloropsis gaditana
+A0A058Z8A8,Fonticula alba (Slime mold)
+A0A086QFP7,Toxoplasma gondii VAND
+A0A0F7UES4,Neospora caninum (strain Liverpool)
+A0A0K8VS41,Bactrocera latifrons (Malaysian fruit fly) (Chaetodacus latifrons)
+A0A0R1DIV9,Drosophila yakuba (Fruit fly)
+A0A1X6NXX1,Porphyra umbilicalis (Purple laver) (Red alga)
+A0A2A9MPA0,Besnoitia besnoiti
+A0A2G8YAZ1,Toxoplasma gondii COUG
+A0A317XSW2,Testicularia cyperi
+A0A6J2U672,Drosophila lebanonensis (Fruit fly) (Scaptodrosophila lebanonensis)
+A0A7D9H4C1,Dekkera bruxellensis (Brettanomyces custersii)
+A0A833VZ32,Frieseomelitta varia
+F2U4W6,Salpingoeca rosetta (strain ATCC 50818 / BSB-021)
+A0A024TT95,Aphanomyces invadans
+A0A024VBX5,Plasmodium falciparum Vietnam Oak-Knoll (FVO)
+A0A0D2X5E9,Capsaspora owczarzaki (strain ATCC 30864)
+A0A0H5QW28,Spongospora subterranea
+A0A150GHZ7,Gonium pectorale (Green alga)
+A0A175YIK7,Daucus carota subsp. sativus (Carrot)
+A0A2E8S024,Myxococcales bacterium
+A0A2I0B2L1,Apostasia shenzhenica
+A0A2P6VII9,Micractinium conductrix
+A0A2R6RJN3,Actinidia chinensis var. chinensis (Chinese soft-hair kiwi)
+A0A388JRQ4,Chara braunii (Braun's stonewort)
+A0A3R7GZX1,Clonorchis sinensis (Chinese liver fluke)
+A0A438C1U6,Vitis vinifera (Grape)
+A0A453KMH0,Aegilops tauschii subsp. strangulata (Goatgrass)
+A0A4S4ELL3,Camellia sinensis var. sinensis
+A0A4S4EQQ7,Camellia sinensis var. sinensis
+A0A4Z2BVP3,Takifugu bimaculatus
+A0A557SVT6,Candidatus Nitrosocosmicus arcticus
+A0A5A8CZZ0,Cafeteria roenbergensis (Marine flagellate)
+A0A5D6YP45,[Pythium] brassicae (nom. inval.)
+A0A5J4YPE2,Porphyridium purpureum (Red alga) (Porphyridium cruentum)
+A0A5J5VW38,Gossypium barbadense (Sea Island cotton) (Hibiscus barbadensis)
+A0A662XJY6,Nothophytophthora sp. (strain Chile5)
+A0A6A6KX67,Hevea brasiliensis (Para rubber tree) (Siphonia brasiliensis)
+A0A7G2DW48,Arabidopsis thaliana (Mouse-ear cress)
+A0A7J0END3,Actinidia rufa
+A0A7J8WQU6,Gossypium aridum (American cotton) (Erioxylum aridum)
+A0A7S0ZCD8,Timspurckia oligopyrenoides
+A0A7S4HRQ4,Odontella aurita
+A0A835KY21,Digitaria exilis
+D7FLK5,Ectocarpus siliculosus (Brown alga) (Conferva siliculosa)
+K3W9K9,Globisporangium ultimum (strain ATCC 200006 / CBS 805.95 / DAOM BR144) (Pythium ultimum)
+U3KN19,Oryctolagus cuniculus (Rabbit)

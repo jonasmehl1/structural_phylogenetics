@@ -1,7 +1,7 @@
 # PARAMS
 # Output folder that will get created, can be overwritten with 
 # snakemake --config output_dir="results/my_run"
-outdir: 'results/my_result'
+outdir: 'my_result'
 # Uniprot identifiers formated as one identifiers per line
 identifiers: 'data/input/identifiers.txt'
 
@@ -22,10 +22,8 @@ low_confidence: 40
 # structural Alphabets and Models 
 alphabets: ["aa", "3Di"]
 
-# For the partitioned iqtree part, which combinations should be used
-combinations_ML: ["ML", "ML_AF", ML_3di"]
-# which 3Di ML method should be combined with the seqence based tree
-3di_models: ["3Di","AF"]
+# which 3Di ML method should be combined with the seqence based tree, available are the 3di matrix based on Puente-Lelievre et. alor the AF Matrix by Hochberg 
+three_di_models: ["3di","AF"]
 
 # min lddt to mask residues in 3Di alignments
 min_lddt: 50
@@ -41,8 +39,8 @@ custom_structs: False
 #max_seqs_brh: 5
 
 # minimum filter evalue
-#eval_both: 1e-3
-#coverage: 50
+eval_both: 1e-3
+coverage: 50
 #eval_brh: 10
 # how many targets to do the tree
 #max_seqs: 150

@@ -1,0 +1,28 @@
+name: structural_phylogeny
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - snakemake
+  - hdf5
+  - snakefmt
+  - biopython
+  - cmake
+  - pandas
+  - python==3.10
+  - scipy
+  - statsmodels
+  - csvtk
+  - seqkit
+  - foldseek
+  - foldmason
+  - clipkit
+  - seqtk
+  - iqtree
+  - pip
+  - pip:
+    - tqdm
+    - wget
+    - numpy
+    - statsmodels
+    - requests

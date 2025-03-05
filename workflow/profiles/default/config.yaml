@@ -1,6 +1,5 @@
 keep-going: true
 rerun-incomplete: true
 printshellcmds: true
-sdm: conda
-conda-prefix: "/home/jonasm/miniforge3/envs/"
+# conda-prefix: "/home/jonasm/miniforge3/envs/"
 

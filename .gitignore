@@ -2,17 +2,5 @@ results/
 .snakemake/
 test/
 launch_*.sh
-*Rproj*
-*Rhistory
-notebooks/prokaryote_sampling_cache/
 .Rproj.user
 logs/
-draft
-resources/fastas/
-resources/structures/
-workflow/notebooks/*cache/
-workflow/notebooks/*files/
-workflow/notebooks/prokaryote_sampling*
-workflow/notebooks/*html
-JASSY/
-JASSY_structs/

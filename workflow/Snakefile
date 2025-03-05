@@ -5,36 +5,35 @@ import snakemake.utils
 # Load fixed config parameters
 configfile: "config/params.yaml"
 
-# get the output directory and define the structure directory
-output_dir = config.get("outdir", "results/my_results")
-input_dir = output_dir + "/structs"
+# Get the output directory and define the structure directory
+output_dir = "results/" + config.get("outdir", "results/my_results")
+input_dir = f"{output_dir}/structs"
 
 identifiers = config.get("identifiers", "identifiers.txt")
 
-# Define model combinations for partition
-combinations_ML = config["combinations_ML"]
-3di_models = config["3di_models"]
 
-# include rules
-include: 'rules/download_data.smk'
-include: 'rules/alignment.smk'
-include: 'rules/trees.smk'
+# Include rules
+include: "rules/download_data.smk"
+include: "rules/alignment.smk"
+include: "rules/trees.smk"
 
 
 rule all:
     input:
-        # download structures, wait for it to be done
+        # Download structures, wait for it to be done
         f"{output_dir}/done.txt",
-
+        # get all sequences in a single file
+        f"{output_dir}/alignment/processed_sequences.fa",
+        
         # FoldTree Results
-        f"{output_dir}/foldtree/foldtree_3di_FT.nwk",
+        #f"{output_dir}/foldtree/foldtree_3di_FT.nwk",
         # f"{output_dir}/foldtree/foldtree_py/foldtree_3di_FTPY.nwk"
 
         # IQ-TREE results for each alphabet and model
-        f"{output_dir}/iqtree/aa/LG.iqtree",
-        expand(f"{output_dir}/iqtree/3di/{{3di_models}}.nwk"),  # 3di and AF for 3di alphabet
 
-        # Partitioned IQ-TREE results combining the ML result with both 3di and AF
-        expand(f"{output_dir}/iqtree_partitioned/ML_{{3di_models}}.nwk")
+        #f"{output_dir}/iqtree/aa/ML.nwk",
+        expand(f"{output_dir}/iqtree/3di/{{combs_3di}}.nwk", combs_3di=config["three_di_models"]),  # 3di and AF for 3di alphabet
 
-
+        # Partitioned IQ-TREE results combining LG with both 3di and AF
+        expand(f"{output_dir}/iqtree_partitioned/ML_{{combs_3di}}.nwk", combs_3di=config["three_di_models"])
+ 
