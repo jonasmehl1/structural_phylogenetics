@@ -20,6 +20,7 @@ rule get_seqs_aa:
 #     # mafft --auto --thread {threads} {input} > {output} 2> {log}
 #     # '''
 
+
 rule get_seqs_3di:
     input:
         ids="{output_dir}/foldseek/foldseek_ids.tsv",

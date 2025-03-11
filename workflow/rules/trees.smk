@@ -65,7 +65,6 @@ rule iqtree_partitioned:
         threedi_submat=config['subst_matrix']['3di'],
         AF_submat=config['subst_matrix']['AF'],
         ufboot=config['UF_boot'],
-        boot=config['boot']
     log: "{output_dir}/iqtree_partitioned/logs/ML_{combs_3di}.log"
     benchmark: "{output_dir}/iqtree_partitioned/benchmarks/ML_{combs_3di}.txt"
     threads: 16

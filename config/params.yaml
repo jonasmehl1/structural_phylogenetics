@@ -3,7 +3,7 @@
 # snakemake --config output_dir="results/my_run"
 outdir: 'my_result'
 # Uniprot identifiers formated as one identifiers per line
-identifiers: 'data/input/identifiers.txt'
+identifiers: 'identifiers.txt'
 
 # Decide which modelfinder procedure or to use or pick a model. Full Model consideration might significantly lower speed but give better accuracy
 # use modelfinder
