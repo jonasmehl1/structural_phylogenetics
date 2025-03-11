@@ -6,4 +6,6 @@ launch_*.sh
 logs/
 results_old/
 tables/
+data/input/*
+!data/input/identifiers.txt
 
