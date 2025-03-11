@@ -4,3 +4,6 @@ test/
 launch_*.sh
 .Rproj.user
 logs/
+results_old/
+tables/
+

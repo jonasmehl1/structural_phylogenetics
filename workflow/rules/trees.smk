@@ -1,8 +1,8 @@
 # Run iqtree with the specified ML options, so one tree with an aa substitution model and one or more 3di options
 rule iqtree:
-    input: "{output_dir}/alignment/foldmason/alignment_{alphabet}.fa"
+    input: "{output_dir}/alignment/foldmason/alignment_{alphabet}_trimmed.fa"
     output:
-        tree="{output_dir}/iqtree/{alphabet}/{model}.nwk",
+        tree="{output_dir}/iqtree/{alphabet}/{model}.iqtree",
     wildcard_constraints:
         alphabet="aa|3di",
         model="ML|3di|AF"
@@ -19,15 +19,15 @@ rule iqtree:
 
     model={wildcards.model}
     if [ "$model" == "3di" ]; then
-        model="3di -mdef {params.threedi_submat}"
+        model="--mset {params.threedi_submat}"
     elif [ "$model" == "AF" ]; then
-        model={params.AF_submat}
+        model="--mset {params.AF_submat}"
     elif [ "$model" == "ML" ]; then
-        model={params.models}
+        model="-m {params.models}"
     fi
 
     iqtree2 -s {input} --prefix $tree_prefix -B {params.ufboot} -T {threads} --quiet \
-    --mem 16G --cmin 4 --cmax 10 --mset $model
+    --mem 16G --cmin 4 --cmax 12 $model
 
     mv $tree_prefix.treefile {output.tree}
     mv $tree_prefix.log {log}
@@ -36,8 +36,8 @@ rule iqtree:
 # Create a partition file of the ML tree with the 3di options
 rule get_part:
     input:
-        ML="{output_dir}/iqtree/aa/ML.nwk",
-        ThreeDI="{output_dir}/iqtree/3di/{combs_3di}.nwk"
+        ML="{output_dir}/iqtree/aa/ML.iqtree",
+        ThreeDI="{output_dir}/iqtree/3di/{combs_3di}.iqtree"
     output: "{output_dir}/iqtree_partitioned/{combs_3di}_combined_partition.part"
     shell: """
     model_ML=$(grep "^Model of substitution" {input.ML} | cut -f2 -d ':')
@@ -64,14 +64,15 @@ rule iqtree_partitioned:
     params:
         threedi_submat=config['subst_matrix']['3di'],
         AF_submat=config['subst_matrix']['AF'],
-        ufboot=config['UF_boot']
+        ufboot=config['UF_boot'],
+        boot=config['boot']
     log: "{output_dir}/iqtree_partitioned/logs/ML_{combs_3di}.log"
     benchmark: "{output_dir}/iqtree_partitioned/benchmarks/ML_{combs_3di}.txt"
-    threads: 8
+    threads: 16
     shell: """
     tree_prefix={output_dir}/iqtree_partitioned/ML_{wildcards.combs_3di}
 
-    iqtree2 -s {input.fa} -p {input.part} --prefix $tree_prefix -mdef {params.threedi_submat} -B {params.ufboot} -T {threads} --quiet 
+    iqtree2 -s {input.fa} -p {input.part} --prefix $tree_prefix -B {params.ufboot} -T {threads} --quiet 
 
     mv $tree_prefix.treefile {output.tree}
     mv $tree_prefix.log {log}

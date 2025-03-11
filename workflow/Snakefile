@@ -32,7 +32,7 @@ rule all:
         # IQ-TREE results for each alphabet and model
 
         #f"{output_dir}/iqtree/aa/ML.nwk",
-        expand(f"{output_dir}/iqtree/3di/{{combs_3di}}.nwk", combs_3di=config["three_di_models"]),  # 3di and AF for 3di alphabet
+        expand(f"{output_dir}/iqtree/3di/{{combs_3di}}.iqtree", combs_3di=config["three_di_models"]),  # 3di and AF for 3di alphabet
 
         # Partitioned IQ-TREE results combining LG with both 3di and AF
         expand(f"{output_dir}/iqtree_partitioned/ML_{{combs_3di}}.nwk", combs_3di=config["three_di_models"])

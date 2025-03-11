@@ -7,14 +7,13 @@ identifiers: 'data/input/identifiers.txt'
 
 # Decide which modelfinder procedure or to use or pick a model. Full Model consideration might significantly lower speed but give better accuracy
 # use modelfinder
-ML_model: 'MF+I+R'
-# Ml_model: 'MF'
+# ML_model: 'MF+I+R'
+ML_model: 'MFP'
 # specify model, e.g. LG
 # Ml_model: 'LG'
-# Ultrafast bootstrap for iqtree
+# Normal or Ultrafast bootstrap iterations for iqtree
+# boot: 100
 UF_boot: 1000
-# Boostrap for fastme
-distboot: 100
 
 # Download pipeline, exclude structures with mean pLDDT lower than X
 low_confidence: 40
@@ -23,7 +22,7 @@ low_confidence: 40
 alphabets: ["aa", "3Di"]
 
 # which 3Di ML method should be combined with the seqence based tree, available are the 3di matrix based on Puente-Lelievre et. alor the AF Matrix by Hochberg 
-three_di_models: ["3di","AF"]
+three_di_models: ["AF"]
 
 # min lddt to mask residues in 3Di alignments
 min_lddt: 50

@@ -60,15 +60,20 @@ rule trim_aln:
     wildcard_constraints:
         alphabet="aa|3di"
     shell: '''
-    clipkit {input} -o /dev/stdout -m gappy -l | seqtk seq -A | \
-    awk '!/^[X-]+$/' | seqtk seq -L 1 -l 60 > {output}
+    # Step 1: First Clipkit run to generate the log file and trimmed alignment
+    clipkit {input} -o {output}.tmp -m gappy -l 
+
+    # Step 2: Read trimmed alignment from file and process it
+    cat {output}.tmp | seqtk seq -A | awk '!/^[X-]+$/' | seqtk seq -L 1 -l 60 > {output}
+	
+    rm {output}.tmp 
     '''
 
 # concatenate the aa and 3di alignment
 rule concat_aln:
     input:
-        aa="{output_dir}/alignment/foldmason/alignment_aa.fa",
-        msa_3di="{output_dir}/alignment/foldmason/alignment_3di.fa"
+        aa="{output_dir}/alignment/foldmason/alignment_aa_trimmed.fa",
+        msa_3di="{output_dir}/alignment/foldmason/alignment_3di_trimmed.fa"
     output:
         "{output_dir}/alignment/concat_aln/concatenated_alignment.alg"
     shell:"""
