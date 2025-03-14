@@ -1,100 +1,58 @@
-# Structural Phylome: A Tool for Structural Phylogenetic Analysis
+# A pipeline for single gene structural phylogenies
 [![Snakemake](https://img.shields.io/badge/snakemake-≥8-brightgreen.svg)](https://snakemake.github.io)
 
-This repo helps running different phylogenetic analyses, including workflows based on protein structures, given some seed sequences or predefined orthogroups. It may be useful to use and benchmark new structural phylogenetics method. It is designed to be easily expandable, so feel free to contribute with code or ideas for us to include!
-
-The results from the first run of the pipeline are reported in this preprint: [Newly developed structure-based methods do not outperform standard sequence-based methods for large-scale phylogenomics](https://www.biorxiv.org/content/10.1101/2024.08.02.606352v1)
+This repo helps impelements multiple phylogenetic methods based on protein structures. 
 
 # Installation
-
-Install Snakemake and its dependencies using Conda:
+Creeate the conda environment that contains all necessary dependencies
 
 ```
-conda create -c conda-forge -c bioconda -n snakemake snakemake hdf5 snakefmt snakedeploy
+conda env create --file=workflow/envs/structural_phylogeny.yaml
 ```
-
-Use the --sdm conda flag with Snakemake for dependency management. Alternatively, YAML files for each workflow step are available in workflow/envs/.
-
-The only dependency not automatically managed in the pipeline is gsutil: follow these instructions for [gsutil installation](https://cloud.google.com/storage/docs/gsutil_install). Gsutil is used to download full UniProt proteomes from [AlphafoldDB](https://alphafold.ebi.ac.uk/).
 
 # Data preparation
 
-To run the pipeline the user will need to prepare these files:
-
-1. `metadata`: a file specifying the taxon sampling. All the protein structures and sequences from the species included in the file will be downloaded. **IMPORTANT:** the species must be present in UniProt, you can check [here](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/README) if your species are present.
-2. `seed_file`: A file with either one column with protein IDs of the seed species or two tab separated columns `orthogroup\tprotein_id`.
-3. `species_tree`: The corresponding species tree in newick format
-4. `configfile`: A `yaml` file with different parameters
-
-The pipeline can be run in two distinct modes: *Phylome* and *OG*. For the first approach, the user only needs to input a list of protein IDs of the seed species (indicated by `seed: UniProt_id` in the `configfile`). Each protein will be aligned to the structures and sequences of the different taxas indicated in the `metadata` file. Alternatively, if the user already has defined orthogroups the homology search step is skipped and the different trees will be computed on these sets. There are two example `yaml` files for both modes in `config/`.
-
-Importantly, global parameters that are likely to be used across different datasets are in `config/params.yaml`. Note that the values in the first custom yaml are prioritary to the ones in this `params.yaml`! However, it is mandatory that the `configfile` has these fields:
-
-```yaml
-# these will be the prefix of the output directory in results/homology
-homology_dataset: 'hsap_euka'
-# these will be the prefix of the output directory in results/phylogeny
-phylo_dataset: 'hsap_1kseeds'
-taxids: 'data/input/Hsapopi_set.txt'
-species_tree: 'data/sptrees/homo_internal.spTree.nw'
-# the seed uniprot id
-seed: ['UP000005640']
-root: 'Atha'
-
-# this is the number of seed genes to run the pipeline
-test_seeds: 'data/seeds/draft_seeds.txt'
-```
-
-Once the user has the 4 files, the data downloading can start:
+All that is needed is a file with uniprot identifiers called identifiers.txt (example in data/input/identifiers.txt)
+A common workflow would be to identify homologs of a query sequence on the AlphaFoldDB with Foldseek and then download the resulting table.
+This table can then be converted to the right format by using
 
 ```
-snakemake -s workflow/download_data.smk --configfile config/test.yaml -p -j2 --sdm conda
+processing/AFDB_to_uniprot.py table.csv
 ```
 
-This first pipeline is necessary to get all input files. From the input table we can download all the pdbs from google and then consider only those entries with mean average quality > `params["low_confidence"]` value. These proteins will be moved into the `high_cif` folder for each proteome. 
+Structures and sequences as well as metadata will then be downloaded automatically when running the snakemake pipeline.
 
-A part from structures, this will also download different metadata for each proteome, including GFFs, CATH IDs and other metadata available in UniProt (in order to link IDs to OMA or EggNOG groups).
-
-You can change the directory where all these data are stored with `params["data_dir"]` parameter but I would just use the default one.
 
 # Usage
 
-## Homology pipeline
-
-![Homology pipeline](resources/dags/blast.png)
-
-First of all, if run in *Phylome* mode, we want to detect homologs with *BlastP* or *Foldseek*. Some of the parameters of the homology search tools can be modified, see the `config/params.yaml`.
-
+The normal way to run this pipeline would be to specify the name of the output directory to be created in /results and the name of the identifiers file found in data/input
 ```
-snakemake --configfile config/example_phylome.yaml -s workflow/run_blast.smk -p -j2 -k --sdm conda
+snakemake --configfile config/params.yaml --config outdir=test identifiers=identifiers_test.txt -p -k 
 ```
 
-Interestingly, given that each UniProt entry is potentially associated to other phylogenomics databases, we can easily benchmark the performance of both tools and parameters. In this case, the general parameters will need to be here: `config/params_ortho_benchmark.yaml`
+Since the pipeline can take some time it can also be launched in a non interactive session to prevent termial timeout
 
 ```
-snakemake --configfile config/example_phylome.yaml -s workflow/ortho_benchmark.smk -p -j2 -k --sdm conda
+nohup snakemake --configfile config/params.yaml --config outdir=test identifiers=identifiers_test.txt -p > .snakemake/log/snakemake_$(date +“%Y-%m-%d_%H-%M-%S”).log 2>&1 ^C
 ```
 
-## Phylogeny pipeline
+# Phylogeny pipeline
+
+Structures are aligned using FoldMason and then trimmed using ClipKit. The pipeline will by default run a standard iqtree ML run on the amino acid alignment, as well as a ML run on the 3di alignment using the substitution matrix by Garg & Hochberg. Both alignments will then be concatenated to run a partition scheme. Additionally another tree will be computed with FastME using the  more conventional the Intramolecular distance metric.
 
 ![Main snakemake pipeline](resources/dags/structpipe.png)
 
-Once you downloaded the data and found your homologs you can run the phylogenetic inference for the seeds/OGs specified in the `seed_file`. You can run different combinations of phylogenetic steps that can be specified in the config file:
+Below are the default parameters for tree reconstruction, which can be customized in config/params.yaml
 
-```yaml
-combinations: ["3Di_3Di", "aa_FM", "aa_LG", "3Di_GTR", "3Di_FT", "comb_part", "3Di_LLM", "3Di_AF"] #, "3Di_FTPY"]
-modes: ['blast', 'fs', 'common', 'union']
-```
-
-The main thing is that for each seed gene there will be # modes * # combinations tree files (assuming 4 modes and 8 combinations=32 trees per seed). Therefore, this can expand quickly and you may want to explore only some specific combination of tools. The output files will be named with this pattern: `{seed}_{target_set}_{alphabet}_{model}`. The different `models` are explained in details in the [preprint](https://www.biorxiv.org/content/10.1101/2024.08.02.606352v1). 
-
-* **Alignment**: 
-	* **aa**: mafft --auto + trimal -gappyout
-	* **3Di**: Foldmason + trimal -gappyout
+* **Alignment**:
+  	* **3Di**: foldmason easy-msa {input_structures} {output_alignment} /tmp --report-mode 1
+	* **aa**: samee as for 3di as foldmason outputs both. Alternatively can also use mafft
 	* **comb**: concatenate **aa** and **3Di**
+ 	
+-- report-mode 1 will also create a html report that can be used to interactively visualize the structure alignment. Caution: this might take some time and resources to load if the alignment is large
 
 * **Tree inference**:
-	* **LG**: iqtree2 -s **aa.fa** --prefix $tree_prefix -B 1000 -T {threads} --boot-trees --quiet --mem 4G --cmin 4 --cmax 10 –mset LG
+	* **AA**: iqtree2 -s **aa.fa** --prefix $tree_prefix -B 1000 -T {threads} --boot-trees --quiet --mem 4G --cmin 4 --cmax 10 –mset LG
 	* **FM**: fastme -q -p -T {threads} -b {params} -i **aa.phy** -o {output} > {log}
 	* **3Di**: iqtree2 -s **3Di.fa** {same as LG} –mset 3DI -mdef resources/subst_matrixes/3DI.nexus
 	* **GTR**: iqtree2 -s **3Di.fa** {same as LG} –mset GTR20
