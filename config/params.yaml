@@ -14,6 +14,7 @@ ML_model: 'MFP'
 # Normal or Ultrafast bootstrap iterations for iqtree
 # boot: 100
 UF_boot: 1000
+fastME_boot: 100
 
 # Download pipeline, exclude structures with mean pLDDT lower than X
 low_confidence: 40

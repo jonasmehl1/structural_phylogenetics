@@ -2,7 +2,8 @@
 rule iqtree:
     input: "{output_dir}/alignment/foldmason/alignment_{alphabet}_trimmed.fa"
     output:
-        tree="{output_dir}/iqtree/{alphabet}/{model}.iqtree",
+        tree="{output_dir}/iqtree/{alphabet}/{model}.treefile",
+        iqtree="{output_dir}/iqtree/{alphabet}/{model}.iqtree"
     wildcard_constraints:
         alphabet="aa|3di",
         model="ML|3di|AF"
@@ -11,7 +12,6 @@ rule iqtree:
         AF_submat=config['subst_matrix']['AF'],
         models = config['ML_model'],
         ufboot=config['UF_boot']
-    log: "{output_dir}/iqtree/logs/{alphabet}_{model}.log"
     benchmark: "{output_dir}/iqtree/benchmarks/{alphabet}_{model}.txt"
     threads: 8
     shell: '''
@@ -28,9 +28,6 @@ rule iqtree:
 
     iqtree2 -s {input} --prefix $tree_prefix -B {params.ufboot} -T {threads} --quiet \
     --mem 16G --cmin 4 --cmax 12 $model
-
-    mv $tree_prefix.treefile {output.tree}
-    mv $tree_prefix.log {log}
     '''
 
 # Create a partition file of the ML tree with the 3di options
@@ -38,7 +35,8 @@ rule get_part:
     input:
         ML="{output_dir}/iqtree/aa/ML.iqtree",
         ThreeDI="{output_dir}/iqtree/3di/{combs_3di}.iqtree"
-    output: "{output_dir}/iqtree_partitioned/{combs_3di}_combined_partition.part"
+    output:
+        "{output_dir}/iqtree_partitioned/{combs_3di}_combined_partition.part"
     shell: """
     model_ML=$(grep "^Model of substitution" {input.ML} | cut -f2 -d ':')
     model_3di=$(grep "^Model of substitution" {input.ThreeDI} | cut -f2 -d ':')
@@ -58,27 +56,128 @@ rule iqtree_partitioned:
         fa="{output_dir}/alignment/concat_aln/concatenated_alignment.alg",
         part="{output_dir}/iqtree_partitioned/{combs_3di}_combined_partition.part"
     output:
-        tree="{output_dir}/iqtree_partitioned/ML_{combs_3di}.nwk",
+        tree="{output_dir}/iqtree_partitioned/ML_{combs_3di}.treefile",
+        iqtree="{output_dir}/iqtree_partitioned/ML_{combs_3di}.iqtree"
     wildcard_constraints:
         combs_3di="3di|AF"
     params:
         threedi_submat=config['subst_matrix']['3di'],
         AF_submat=config['subst_matrix']['AF'],
         ufboot=config['UF_boot'],
-    log: "{output_dir}/iqtree_partitioned/logs/ML_{combs_3di}.log"
     benchmark: "{output_dir}/iqtree_partitioned/benchmarks/ML_{combs_3di}.txt"
-    threads: 16
+    threads: 24
     shell: """
     tree_prefix={output_dir}/iqtree_partitioned/ML_{wildcards.combs_3di}
 
     iqtree2 -s {input.fa} -p {input.part} --prefix $tree_prefix -B {params.ufboot} -T {threads} --quiet 
-
-    mv $tree_prefix.treefile {output.tree}
-    mv $tree_prefix.log {log}
-    rm -f $tree_prefix.model.gz $tree_prefix.splits.nex $tree_prefix.contree $tree_prefix.ckp.gz
     """
 
-##### FOLDTREE #####
+##### FastME IMD #####
+
+
+# Use T-Coffee to get IMD matrices from the fasta sequences
+rule tcoffee_templates:
+    input:   
+        fasta = "{output_dir}/alignment/trimal/alignment_aa_trimmed.fa",
+        pdb_dir = f"{input_dir}"
+    output: 
+        templates = "{output_dir}/fastME/tc_templates.txt"
+    script:
+        "../scripts/t_coffee_template.py"  # Python script to run
+
+# Get the IMD matrices
+rule IMD_matrix:
+    input:
+        templates = "{output_dir}/fastME/tc_templates.txt",
+        alignment = "{output_dir}/alignment/trimal/alignment_aa_trimmed.fa"
+    output: "{output_dir}/fastME/IMD_matrices.txt"
+    threads: 8
+    params:
+        boot = config['fastME_boot']
+    shell: """
+    
+    export THREED_TREE_MODE=10
+    
+    t_coffee -other_pg seq_reformat \
+        -in {input.alignment} \
+        -in2 {input.templates} \
+        -action +replicates {params.boot} +phylo3d +print_replicates \
+        -output dm > {output}
+    """
+    
+# replace all -1 values with 100
+rule correct_matrix:
+    input:
+        raw_matrix="{output_dir}/fastME/IMD_matrices.txt"
+    output:
+        fixed_matrix="{output_dir}/fastME/IMD_matrices_corrected.txt",
+        log="{output_dir}/fastME/IMD_matrices_corrected.log"
+    shell: """
+    fixed_max=100
+
+    num_replacements=$(awk -v max=$fixed_max '{{count+=gsub("-1", max)}} END {{print count}}' {input.raw_matrix})
+    num_matrices=$(awk 'BEGIN{{count=0}} NF==0{{count++}} END{{print count}}' {input.raw_matrix})
+
+    # Replace -1 with the fixed maximum distance (20) and save the new matrix
+    awk -v max=$fixed_max '{{gsub("-1", max)}}1' {input.raw_matrix} > {output.fixed_matrix}
+
+    echo "Max Distance Used: $fixed_max" > {output.log}
+    echo "Total -1 Replacements: $num_replacements" >> {output.log}
+    echo "Number of Matrices (Replicates): $num_matrices" >> {output.log}
+    """
+
+# Extract individual replicates from the big matrix file and compute the reference tree
+rule extract_matrices:
+    input:
+        matrices_all ="{output_dir}/fastME/IMD_matrices_corrected.txt"
+    output:
+        main= "{output_dir}/fastME/ref_IMD.txt",
+        replicates=directory("{output_dir}/fastME/replicates/")
+
+    params: outdir = "{output_dir}"
+    shell: """
+    # Ensure the replicates directory exists.
+    mkdir -p {output.replicates}
+    
+    # Split the big matrix into individual replicate files.
+    awk -v RS="" '{{print > ("{output.replicates}/replicate_" NR ".txt")}}' {input.matrices_all}
+
+    mv {output.replicates}/replicate_1.txt {params.outdir}/fastME/ref_IMD.txt
+    """
+
+# Get the reference tree
+rule fastME_reference:
+    input: "{output_dir}/fastME/ref_IMD.txt"
+    output: "{output_dir}/fastME/ref_IMD.nwk"
+    log: "{output_dir}/fastME/logs/main_IMD.log"
+    shell: """
+    fastme -i {input} -o {output} -g 1.0 -s -n -z 5 -I {log}
+    """
+
+# Run FastME on the bootstrapped distance matrices to create a separate tree from each
+rule fastME_bootstrap_trees:
+    input: "{output_dir}/fastME/replicates/replicate_{replicate}.txt"
+    output: "{output_dir}/fastME/replicate_trees/replicate_{replicate}.nwk"
+    log: "{output_dir}/fastME/logs/replicate_{replicate}.log"
+    shell: """
+    fastme -i {input} -o {output} -g 1.0 -s -n -z 5 -I {log}
+    """
+
+# Combine all trees and get branch bootstrap support
+rule fastME_combine_trees:
+    input:
+        ref_tree="{output_dir}/fastME/ref_IMD.nwk",
+        replicates=expand("{{output_dir}}/fastME/replicate_trees/replicate_{replicate}.nwk",replicate=range(2,102))
+    output: "{output_dir}/fastME/FastME_IMD_final.nwk"
+    params:
+        script="workflow/scripts/IMD_bootstrap.R",
+        rep_dir="{output_dir}/fastME/replicate_trees"
+    shell: """  
+    Rscript {params.script} --ref_tree {input.ref_tree} --rep_dir {params.rep_dir} --out {output} 
+    """
+
+
+    ##### FOLDTREE #####
 
 # rule foldseek_allvall_tree:
 #     input:

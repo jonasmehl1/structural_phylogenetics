@@ -20,6 +20,9 @@ dependencies:
   - seqtk
   - iqtree
   - pip
+  - r-base
+  - r-phangorn
+   -r-argparser
   - pip:
     - tqdm
     - wget

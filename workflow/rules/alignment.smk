@@ -20,7 +20,6 @@ rule get_seqs_aa:
 #     # mafft --auto --thread {threads} {input} > {output} 2> {log}
 #     # '''
 
-
 rule get_seqs_3di:
     input:
         ids="{output_dir}/foldseek/foldseek_ids.tsv",
@@ -55,19 +54,28 @@ rule foldmason:
     '''
 
 # Trim the alignment using clipkit with the -m gappy option which is fairly conservative overall
-rule trim_aln:
+rule trim_aln_clipkit:
     input: "{output_dir}/alignment/foldmason/alignment_{alphabet}.fa"
     output: "{output_dir}/alignment/foldmason/alignment_{alphabet}_trimmed.fa"
     wildcard_constraints:
         alphabet="aa|3di"
     shell: '''
-    # Step 1: First Clipkit run to generate the log file and trimmed alignment
     clipkit {input} -o {output}.tmp -m gappy -l 
-
-    # Step 2: Read trimmed alignment from file and process it
+    
     cat {output}.tmp | seqtk seq -A | awk '!/^[X-]+$/' | seqtk seq -L 1 -l 60 > {output}
 	
     rm {output}.tmp 
+    '''
+# a small workaround here so i can get the logfile
+
+# Also trim with trimal which will be used to create the IMD distance matrix
+rule trim_aln_trimal:
+    input: "{output_dir}/alignment/foldmason/alignment_{alphabet}.fa"
+    output: "{output_dir}/alignment/trimal/alignment_{alphabet}_trimmed.fa"
+    wildcard_constraints:
+        alphabet="aa|3di"
+    shell: '''
+    trimal -in {input} -out {output} -automated1
     '''
 
 # concatenate the aa and 3di alignment

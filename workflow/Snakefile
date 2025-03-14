@@ -25,6 +25,11 @@ rule all:
         # get all sequences in a single file
         f"{output_dir}/alignment/processed_sequences.fa",
         
+        # fastME based on IMD
+        f"{output_dir}/fastME/ref_IMD.txt",
+        f"{output_dir}/fastME/FastME_IMD.nwk"
+        
+        
         # FoldTree Results
         #f"{output_dir}/foldtree/foldtree_3di_FT.nwk",
         # f"{output_dir}/foldtree/foldtree_py/foldtree_3di_FTPY.nwk"
@@ -32,8 +37,8 @@ rule all:
         # IQ-TREE results for each alphabet and model
 
         #f"{output_dir}/iqtree/aa/ML.nwk",
-        expand(f"{output_dir}/iqtree/3di/{{combs_3di}}.iqtree", combs_3di=config["three_di_models"]),  # 3di and AF for 3di alphabet
+        #expand(f"{output_dir}/iqtree/3di/{{combs_3di}}.iqtree", combs_3di=config["three_di_models"]),  # 3di and AF for 3di alphabet
 
         # Partitioned IQ-TREE results combining LG with both 3di and AF
-        expand(f"{output_dir}/iqtree_partitioned/ML_{{combs_3di}}.nwk", combs_3di=config["three_di_models"])
+        #expand(f"{output_dir}/iqtree_partitioned/ML_{{combs_3di}}.nwk", combs_3di=config["three_di_models"])
  
