@@ -17,7 +17,7 @@ A common workflow would be to identify homologs of a query sequence on the Alpha
 This table can then be converted to the right format by using
 
 ```
-processing/AFDB_to_uniprot.py table.csv
+python processing/AFDB_to_uniprot.py table.csv
 ```
 
 Structures and sequences as well as metadata will then be downloaded automatically when running the snakemake pipeline.
@@ -27,18 +27,18 @@ Structures and sequences as well as metadata will then be downloaded automatical
 
 The normal way to run this pipeline would be to specify the name of the output directory to be created in /results and the name of the identifiers file found in data/input
 ```
-snakemake --configfile config/params.yaml --config outdir=test identifiers=identifiers_test.txt -p -k 
+snakemake --configfile config/params.yaml --config outdir=test identifiers=identifiers_test.txt -p -k -c 16
 ```
 
 Since the pipeline can take some time it can also be launched in a non interactive session to prevent termial timeout
 
 ```
-nohup snakemake --configfile config/params.yaml --config outdir=test identifiers=identifiers_test.txt -p > .snakemake/log/snakemake_$(date +“%Y-%m-%d_%H-%M-%S”).log 2>&1 &
+nohup snakemake --configfile config/params.yaml --config outdir=test identifiers=identifiers_test.txt -p -k -c 16 > .snakemake/log/snakemake_$(date +“%Y-%m-%d_%H-%M-%S”).log 2>&1 &
 ```
 
 # Phylogeny pipeline
 
-Structures are aligned using FoldMason and then trimmed using ClipKit. The pipeline will by default run a standard iqtree ML run on the amino acid alignment, as well as a ML run on the 3di alignment using the AF substitution matrix by [Garg & Hochberg, 2024](https://www.biorxiv.org/content/10.1101/2024.09.19.613819v3). Alternatively the matrix by [Puente-Lelievre et al., 2024](https://www.biorxiv.org/content/10.1101/2023.12.12.571181v2) can also be used. Both alignments will then be concatenated to run a partition scheme. Additionally another tree will be computed with FastME using the more conventional the Intramolecular distance metric, which is implemented in T-COFFEE.
+Structures are aligned using FoldMason and then trimmed using ClipKit. The pipeline will by default run a standard iqtree ML run on the amino acid alignment, as well as a ML run on the 3di alignment using the AF substitution matrix by [Garg & Hochberg, 2024](https://www.biorxiv.org/content/10.1101/2024.09.19.613819v3). Alternatively the 3di matrix by [Puente-Lelievre et al., 2024](https://www.biorxiv.org/content/10.1101/2023.12.12.571181v2) can also be used. Both alignments will then be concatenated to run a partition scheme. If desired (needs to be enabled in the main snakefile), additionally another tree will be computed with FastME using the more conventional Intramolecular distance metric, which is implemented in T-COFFEE. This includes a bootstrapping procedure where 100 trees are created from 100 bootstrapped matrices and combined. 
 
 ![Main snakemake pipeline](resources/dags/structpipe.png)
 
@@ -60,6 +60,5 @@ Below are the default parameters for tree reconstruction, which can be customize
   	* **AF**: iqtree2 -s {3di.alignment}{same as AA} –mset resources/subst_matrixes/Q_mat_AF_Garg.txt
 	* **FM**: fastme -i {distmat} -o {output} -g 1.0 -s -n -z 5
 	* **3Di**: iqtree2 -s {3di.alignment} {same as LG} –mset 3DI -mdef resources/subst_matrixes/3DI.nexus
-
-	* **Part**: Create partition file with best model from **ML** and **3Di**. Then
-		iqtree2 -s {combined_alignment} -p {input.part} --prefix $tree_prefix -mdef resources/subst_matrixes/3DI.nexus -B 1000 -T {threads}
+	* **Part**: Create partition file with best model from **ML** and **AF**. Then
+		iqtree2 -s {combined_alignment} -p {input.part} -B 1000 -T {threads}
