@@ -10,8 +10,6 @@ rule dl_ids_sequences:
         ids= "data/input/" + config["identifiers"]
     output:
         "{output_dir}" + "/sequence_dataset.csv"
-    log:
-        "{output_dir}" + "/logs/dlsequences.log"
     params:
         custom_structs=config["custom_structs"],
         clean_folder=config["clean_folder"]
@@ -23,8 +21,6 @@ rule dl_ids_structs:
         "{output_dir}" + "/sequence_dataset.csv"
     output:
         "{output_dir}" + "/finalset.csv"
-    log:
-        "{output_dir}" + "/logs/dlstructs.log"
     params:
         filtervar=config["eval_both"],
         filtervar_min=config["low_confidence"],
@@ -40,8 +36,6 @@ rule plddt:
     output:
         "{output_dir}" + "/plddt.json",
         touch("{output_dir}" + "/done.txt")
-    log:
-        "{output_dir}" + "/logs/plddt.log"
     script:
         "../scripts/grabplddt.py"
 

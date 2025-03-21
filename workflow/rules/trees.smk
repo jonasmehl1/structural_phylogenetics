@@ -29,7 +29,7 @@ rule iqtree:
     iqtree2 -s {input} --prefix $tree_prefix -B {params.ufboot} -T {threads} --quiet \
     --mem 16G --cmin 4 --cmax 12 $model
     '''
-
+    
 # Create a partition file of the ML tree with the 3di options
 rule get_part:
     input:
@@ -65,7 +65,7 @@ rule iqtree_partitioned:
         AF_submat=config['subst_matrix']['AF'],
         ufboot=config['UF_boot'],
     benchmark: "{output_dir}/iqtree_partitioned/benchmarks/ML_{combs_3di}.txt"
-    threads: 24
+    threads: 16
     shell: """
     tree_prefix={output_dir}/iqtree_partitioned/ML_{wildcards.combs_3di}
 
@@ -113,7 +113,7 @@ rule correct_matrix:
         fixed_matrix="{output_dir}/fastME/IMD_matrices_corrected.txt",
         log="{output_dir}/fastME/IMD_matrices_corrected.log"
     shell: """
-    fixed_max=100
+    fixed_max=50
 
     num_replacements=$(awk -v max=$fixed_max '{{count+=gsub("-1", max)}} END {{print count}}' {input.raw_matrix})
     num_matrices=$(awk 'BEGIN{{count=0}} NF==0{{count++}} END{{print count}}' {input.raw_matrix})
@@ -131,27 +131,27 @@ rule extract_matrices:
     input:
         matrices_all ="{output_dir}/fastME/IMD_matrices_corrected.txt"
     output:
-        main= "{output_dir}/fastME/ref_IMD.txt",
-        replicates=directory("{output_dir}/fastME/replicates/")
-
-    params: outdir = "{output_dir}"
+        main = "{output_dir}/fastME/replicates/ref_IMD.txt",
+        replicates = expand("{{output_dir}}/fastME/replicates/replicate_{replicate}.txt",
+           replicate=range(2, config['fastME_boot'] + 2))
+    params:
+        outdir = "{output_dir}/fastME/replicates"
     shell: """
-    # Ensure the replicates directory exists.
-    mkdir -p {output.replicates}
+    mkdir -p {params.outdir}
     
     # Split the big matrix into individual replicate files.
-    awk -v RS="" '{{print > ("{output.replicates}/replicate_" NR ".txt")}}' {input.matrices_all}
+    awk -v RS="" '{{print > ("{params.outdir}/replicate_" NR ".txt")}}' {input.matrices_all}
 
-    mv {output.replicates}/replicate_1.txt {params.outdir}/fastME/ref_IMD.txt
+    mv {params.outdir}/replicate_1.txt {params.outdir}/ref_IMD.txt
     """
 
 # Get the reference tree
 rule fastME_reference:
-    input: "{output_dir}/fastME/ref_IMD.txt"
+    input: "{output_dir}/fastME/replicates/ref_IMD.txt"
     output: "{output_dir}/fastME/ref_IMD.nwk"
     log: "{output_dir}/fastME/logs/main_IMD.log"
     shell: """
-    fastme -i {input} -o {output} -g 1.0 -s -n -z 5 -I {log}
+    fastme -i {input} -o {output} -g 1.0 -s -n -z 5 -I {log} 
     """
 
 # Run FastME on the bootstrapped distance matrices to create a separate tree from each
@@ -160,14 +160,14 @@ rule fastME_bootstrap_trees:
     output: "{output_dir}/fastME/replicate_trees/replicate_{replicate}.nwk"
     log: "{output_dir}/fastME/logs/replicate_{replicate}.log"
     shell: """
-    fastme -i {input} -o {output} -g 1.0 -s -n -z 5 -I {log}
+    fastme -i {input} -o {output} -g 1.0 -s -n -z 5 -I {log} 
     """
 
 # Combine all trees and get branch bootstrap support
 rule fastME_combine_trees:
     input:
         ref_tree="{output_dir}/fastME/ref_IMD.nwk",
-        replicates=expand("{{output_dir}}/fastME/replicate_trees/replicate_{replicate}.nwk",replicate=range(2,102))
+        replicates= rules.fastME_bootstrap_trees.output
     output: "{output_dir}/fastME/FastME_IMD_final.nwk"
     params:
         script="workflow/scripts/IMD_bootstrap.R",

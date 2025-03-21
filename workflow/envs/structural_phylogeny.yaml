@@ -14,12 +14,13 @@ dependencies:
   - statsmodels
   - csvtk
   - seqkit
-  - foldseek
   - foldmason
   - clipkit
+  - trimal
   - seqtk
   - iqtree
   - pip
+  - t-coffee
   - r-base
   - r-phangorn
    -r-argparser

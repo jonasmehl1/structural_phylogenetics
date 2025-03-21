@@ -6,7 +6,7 @@ import sys
 
 # Input and output file paths
 input_csv_file = sys.argv[1]  # Input CSV file provided as a command-line argument
-output_file = "identifiers.txt"  # Output file to store extracted UniProt IDs
+output_file = sys.argv[2] # Output file to store extracted UniProt IDs
 
 # Function to extract UniProt ID from AlphaFold DB ID
 def extract_uniprot_id(alphafold_id):

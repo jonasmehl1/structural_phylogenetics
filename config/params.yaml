@@ -25,7 +25,7 @@ alphabets: ["aa", "3Di"]
 # which 3Di ML method should be combined with the seqence based tree, available are the 3di matrix based on Puente-Lelievre et. alor the AF Matrix by Hochberg 
 three_di_models: ["AF"]
 
-# min lddt to mask residues in 3Di alignments
+# min lddt to mask residues for the seed stage in foldmason
 min_lddt: 50
 
 # Foldtree options
