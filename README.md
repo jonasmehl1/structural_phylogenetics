@@ -22,7 +22,6 @@ python processing/AFDB_to_uniprot.py table.csv
 
 Structures and sequences as well as metadata will then be downloaded automatically when running the snakemake pipeline.
 
-
 # Usage
 
 The normal way to run this pipeline would be to specify the name of the output directory to be created in /results and the name of the identifiers file found in data/input
@@ -40,7 +39,7 @@ nohup snakemake --configfile config/params.yaml --config outdir=test identifiers
 
 Structures are aligned using FoldMason and then trimmed using ClipKit. The pipeline will by default run a standard iqtree ML run on the amino acid alignment, as well as a ML run on the 3di alignment using the AF substitution matrix by [Garg & Hochberg, 2024](https://www.biorxiv.org/content/10.1101/2024.09.19.613819v3). Alternatively the 3di matrix by [Puente-Lelievre et al., 2024](https://www.biorxiv.org/content/10.1101/2023.12.12.571181v2) can also be used. Both alignments will then be concatenated to run a partition scheme. If desired (needs to be enabled in the main snakefile), additionally another tree will be computed with FastME using the more conventional Intramolecular distance metric, which is implemented in T-COFFEE. This includes a bootstrapping procedure where 100 trees are created from 100 bootstrapped matrices and combined. 
 
-![Main snakemake pipeline](resources/dags/structpipe.png)
+![Main snakemake pipeline](data/dag.png)
 
 Below are the default parameters for tree reconstruction, which can be customized in config/params.yaml
 
@@ -59,6 +58,6 @@ Below are the default parameters for tree reconstruction, which can be customize
 	* **AA**: iqtree2 -s {aa.alignment} --prefix $tree_prefix -B 1000 -T {threads} --boot-trees --quiet --mem 16G --cmin 4 --cmax 12 –m MFP. Uses Modelfinder to find the best fit model
   	* **AF**: iqtree2 -s {3di.alignment}{same as AA} –mset resources/subst_matrixes/Q_mat_AF_Garg.txt
 	* **FM**: fastme -i {distmat} -o {output} -g 1.0 -s -n -z 5
-	* **3Di**: iqtree2 -s {3di.alignment} {same as LG} –mset 3DI -mdef resources/subst_matrixes/3DI.nexus
+	* **3Di**: iqtree2 -s {3di.alignment} {same as AF} –mset 3DI -mdef resources/subst_matrixes/3DI.nexus
 	* **Part**: Create partition file with best model from **ML** and **AF**. Then
 		iqtree2 -s {combined_alignment} -p {input.part} -B 1000 -T {threads}
