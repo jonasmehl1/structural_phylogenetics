@@ -39,7 +39,7 @@ nohup snakemake --configfile config/params.yaml --config outdir=test identifiers
 
 Structures are aligned using FoldMason and then trimmed using ClipKit. The pipeline will by default run a standard iqtree ML run on the amino acid alignment, as well as a ML run on the 3di alignment using the AF substitution matrix by [Garg & Hochberg, 2024](https://www.biorxiv.org/content/10.1101/2024.09.19.613819v3). Alternatively the 3di matrix by [Puente-Lelievre et al., 2024](https://www.biorxiv.org/content/10.1101/2023.12.12.571181v2) can also be used. Both alignments will then be concatenated to run a partition scheme. If desired (needs to be enabled in the main snakefile), additionally another tree will be computed with FastME using the more conventional Intramolecular distance metric, which is implemented in T-COFFEE. This includes a bootstrapping procedure where 100 trees are created from 100 bootstrapped matrices and combined. 
 
-![Main snakemake pipeline](data/dag.png)
+![Main snakemake pipeline](data/rules_dag.png)
 
 Below are the default parameters for tree reconstruction, which can be customized in config/params.yaml
 
