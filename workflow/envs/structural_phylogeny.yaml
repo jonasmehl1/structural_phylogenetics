@@ -23,7 +23,7 @@ dependencies:
   - t-coffee
   - r-base
   - r-phangorn
-   -r-argparser
+  - r-argparser
   - pip:
     - tqdm
     - wget
