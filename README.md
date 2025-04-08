@@ -4,6 +4,12 @@
 This repo impelements multiple phylogenetic methods based on protein structures. 
 
 # Installation
+Clone the repo
+
+```
+git clone https://github.com/jonasmehl1/structural_phylogenetics.git
+```
+
 Creeate the conda environment that contains all necessary dependencies
 
 ```
@@ -26,7 +32,7 @@ Structures and sequences as well as metadata will then be downloaded automatical
 
 The normal way to run this pipeline would be to specify the name of the output directory to be created in /results and the name of the identifiers file found in data/input
 ```
-snakemake --configfile config/params.yaml --config outdir=test identifiers=identifiers_test.txt -p -k -c 16
+snakemake --configfile config/params.yaml --config outdir=test identifiers=identifiers.txt -p -k -c 16
 ```
 
 Since the pipeline can take some time it can also be launched in a non interactive session to prevent termial timeout
