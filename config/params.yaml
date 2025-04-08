@@ -2,17 +2,14 @@
 # Output folder that will get created, can be overwritten with 
 # snakemake --config output_dir="results/my_run"
 outdir: 'my_result'
-# Uniprot identifiers formated as one identifiers per line
+# Uniprot identifiers formated as one identifiers per line, can be overwritten with --config identifiers="identifiers_test.txt"
 identifiers: 'identifiers.txt'
 
 # Decide which modelfinder procedure or to use or pick a model. Full Model consideration might significantly lower speed but give better accuracy
-# use modelfinder
-# ML_model: 'MF+I+R'
+# use modelfinder plus
 ML_model: 'MFP'
-# specify model, e.g. LG
-# Ml_model: 'LG'
-# Normal or Ultrafast bootstrap iterations for iqtree
-# boot: 100
+
+# Ultrafast bootstrap iterations for iqtree
 UF_boot: 1000
 fastME_boot: 100
 
@@ -22,29 +19,13 @@ low_confidence: 40
 # structural Alphabets and Models 
 alphabets: ["aa", "3Di"]
 
-# which 3Di ML method should be combined with the seqence based tree, available are the 3di matrix based on Puente-Lelievre et. alor the AF Matrix by Hochberg 
+# which 3Di ML method should be combined with the seqence based tree, available are the 3di matrix based on Puente-Lelievre et. al or the AF Matrix by Garg & Hochberg 
+# where 3Di corresponds to a blosum like matrix and AF (or LLM, which are almost identical, see Garg et al.) is a full classical substition matrix
 three_di_models: ["AF"]
+#three_di_models: ["AF","3Di"]
 
 # min lddt to mask residues for the seed stage in foldmason
 min_lddt: 50
-
-# Foldtree options
-clean_folder: False
-custom_structs: False
-
-# Hypothetical if i would include foldseek in the pipeline
-# target per queries in both foldseek and blast
-#target_seqs: 1000
-
-#max_seqs_brh: 5
-
-# minimum filter evalue
-eval_both: 1e-3
-coverage: 50
-#eval_brh: 10
-# how many targets to do the tree
-#max_seqs: 150
-
 
 # substitution matrices
 subst_matrix: 

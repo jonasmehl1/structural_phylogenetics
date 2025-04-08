@@ -74,6 +74,8 @@ rule iqtree_partitioned:
 
 ##### FastME IMD #####
 
+# This is not implemented in the standard pipeline but can be enabled in the main snakefile
+
 
 # Use T-Coffee to get IMD matrices from the fasta sequences
 rule tcoffee_templates:
@@ -83,7 +85,7 @@ rule tcoffee_templates:
     output: 
         templates = "{output_dir}/fastME/tc_templates.txt"
     script:
-        "../scripts/t_coffee_template.py"  # Python script to run
+        "../scripts/t_coffee_template.py"
 
 # Get the IMD matrices
 rule IMD_matrix:
@@ -118,7 +120,7 @@ rule correct_matrix:
     num_replacements=$(awk -v max=$fixed_max '{{count+=gsub("-1", max)}} END {{print count}}' {input.raw_matrix})
     num_matrices=$(awk 'BEGIN{{count=0}} NF==0{{count++}} END{{print count}}' {input.raw_matrix})
 
-    # Replace -1 with the fixed maximum distance (20) and save the new matrix
+    # Replace -1 with the fixed maximum distance and save the new matrix
     awk -v max=$fixed_max '{{gsub("-1", max)}}1' {input.raw_matrix} > {output.fixed_matrix}
 
     echo "Max Distance Used: $fixed_max" > {output.log}
@@ -176,73 +178,4 @@ rule fastME_combine_trees:
     Rscript {params.script} --ref_tree {input.ref_tree} --rep_dir {params.rep_dir} --out {output} 
     """
 
-
-    ##### FOLDTREE #####
-
-# rule foldseek_allvall_tree:
-#     input:
-#         structs = config["input_dir"],
-#         done=config["outdir"] + "/done.txt"
-#     output: "{output_dir}/foldtree/foldseek_allvall/foldseek_allvall.txt"
-#     log: "{output_dir}/foldtree/foldseek_allvall/logs/foldseek.log"
-#     benchmark: "{output_dir}/foldtree/foldseek_allvall/benchmarks/foldseek.txt"
-#     shell:'''
-#     foldseek easy-search {input.structs} {input.structs} {output} $TMPDIR/foldseek_tmp \
-#     --format-output 'query,target,fident,lddt,alntmscore' --exhaustive-search -e inf \
-#     --alignment-type 2 > {log}
-#     '''
-#
-# rule foldseek_distmat:
-#     input: "{output_dir}/foldtree/foldseek_allvall/foldseek_allvall.txt"
-#     output: "{output_dir}/foldtree/foldseek_distmat/foldseek_3di_fident.txt"
-#     script: "../scripts/foldtree/foldseekres2distmat_simple.py"
-#
-# rule foldtree:
-#     input: "{output_dir}/foldtree/foldseek_distmat/foldseek_3di_fident.txt"
-#     output: "{output_dir}/foldtree/foldtree_3di_FT.nwk"
-#     wildcard_constraints:
-#         alphabet="3di"
-#     benchmark: "{output_dir}/foldtree/benchmarks/foldtree.txt"
-#     shell: '''
-#         quicktree -i m {input} | paste -s -d '' > {output}
-#         '''
-
-# rule foldtree_py:
-#     input:
-#         struct_db = config["input_dir"],
-#         foldseek_results = rules.foldseek_allvall_tree.output
-#     output:
-#         distmat="{output_dir}/foldtree/foldtree_py/foldtree_3di_FTPY.txt",
-#         tree="{output_dir}/foldtree/foldtree_py/foldtree_3di_FTPY.nwk"
-#     params: outdir="{output_dir}"
-#     log: "{output_dir}/foldtree/foldtree_py/logs/foldtree_py.log"
-#     conda: "../envs/sp_python.yaml"
-#     shell: '''
-#         indir=$(dirname {input.struct_db})
-#         foldseek_output=$(dirname {input.foldseek_results})
-# 
-#         python workflow/scripts/foldtree/foldtree.py -i {input.struct_db} -o {params.outdir}/foldtree/foldtree_py_output \
-#         -t $TMPDIR --outtree {output.tree} -c {params.outdir}/foldtree/foldtree_py_core \
-#         --corecut --correction --kernel fident > {log}
-# 
-#         # Cleanup
-#         rm -rf {params.outdir}/foldtree/foldtree_py_core
-#         rm -f {output.distmat}_fastme_stat.txt {output.distmat}.tmp
-#         rm -f {params.outdir}/foldtree/foldtree_py_allvall.tsv
-#         rm -f {params.outdir}/foldtree/foldtree_py_core_allvall.tsv
-#     '''
-
-
-    # rule quicktree:
-#     input: outdir+"/seeds/{seed}/{i}/{i}_{mode}_{alphabet}.alg.clean"
-#     output: outdir+"/seeds/{seed}/{i}/{i}_{mode}_{alphabet}_QT.nwk"
-#     wildcard_constraints:
-#         alphabet="aa"
-#     params: config["distboot"]
-#     log: outdir+"/log/quicktree/{seed}_{i}_{mode}_{alphabet}_QT.log"
-#     benchmark: outdir+"/benchmarks/quicktree/{seed}_{i}_{mode}_{alphabet}_QT.txt"
-#     conda: "../envs/sp_tree.yaml"
-#     shell:'''
-# esl-reformat stockholm {input} | quicktree -boot {params} -in a -out t /dev/stdin | paste -s -d '' > {output} 2> {log}
-# '''
 

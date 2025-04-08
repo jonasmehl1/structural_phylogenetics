@@ -23,15 +23,16 @@ rule all:
         f"{output_dir}/done.txt",
         # get all sequences in a single file
         f"{output_dir}/alignment/processed_sequences.fa",
-        #f"{output_dir}/alignment/trimal/alignment_{alphabet}_trimmed.fa",
+
+        # FoldMason alignment only
+        #f"{output_dir}/alignment/foldmason/alignment_aa.fa"
 
         # fastME based on IMD
         #f"{output_dir}/fastME/ref_IMD.txt",
         #f"{output_dir}/fastME/FastME_IMD_final.nwk",
-        
-        
+
         # IQ-TREE results for each alphabet and model
-        expand(f"{output_dir}/iqtree/3di/{{combs_3di}}.iqtree", combs_3di=config["three_di_models"]),  # 3di and AF for 3di alphabet
+        expand(f"{output_dir}/iqtree/3di/{{combs_3di}}.iqtree", combs_3di=config["three_di_models"]),
 
         # Partitioned IQ-TREE results combining LG with both 3di and AF
         expand(f"{output_dir}/iqtree_partitioned/ML_{{combs_3di}}.iqtree", combs_3di=config["three_di_models"])

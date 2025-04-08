@@ -40,11 +40,13 @@ rule trim_aln_clipkit:
 # Also trim with trimal which will be used to create the IMD distance matrix
 rule trim_aln_trimal:
     input: "{output_dir}/alignment/foldmason/alignment_{alphabet}.fa"
-    output: "{output_dir}/alignment/trimal/alignment_{alphabet}_trimmed.fa"
+    output: 
+    	msa = "{output_dir}/alignment/trimal/alignment_{alphabet}_trimmed.fa",
+    	report = "{output_dir}/alignment/trimal/trimal_{alphabet}_report.txt"
     wildcard_constraints:
         alphabet="aa|3di"
     shell: '''
-    trimal -in {input} -out {output} -automated1
+    trimal -in {input} -out {output.msa} -gappyout > {output.report} 2>&1
     '''
 
 # concatenate the aa and 3di alignment
