@@ -27,7 +27,7 @@ three_di_models: ["AF"]
 # min lddt to mask residues for the seed stage in foldmason
 min_lddt: 50
 
-# Some stuff i need for the download pipelien that i adapted from foldtree
+# Some stuff i need for the download pipeline that i adapted from foldtree, shouldnt actually do anything 
 eval_both: 1e-3
 coverage: 50
 clean_folder: False
