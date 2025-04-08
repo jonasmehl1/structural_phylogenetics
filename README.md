@@ -70,4 +70,4 @@ Below are the default parameters for tree reconstruction, which can be customize
 
 # Customization
 
-In principle the entire pipeline is easily customizable by changing the input/output files in the snakemake rules, e.g. if we dont want to trim the alignments.
+In principle the entire pipeline is easily customizable by changing the input/output files in the snakemake rules, e.g. if we dont want to trim the alignments. So in the main snakefile workflow/snakefile simply comment out the parts with iqtree if you only want the structure alignments and snakemake will only execute until there.
