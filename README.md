@@ -12,7 +12,7 @@ conda env create --file=workflow/envs/structural_phylogeny.yaml
 
 # Data preparation
 
-All that is needed is a file with uniprot identifiers called identifiers.txt (example in data/input/identifiers.txt)
+All that is needed is a file with uniprot identifiers called identifiers.txt (example in data/input/identifiers.txt).
 A common workflow would be to identify homologs of a query sequence on the AlphaFoldDB with Foldseek and then download the resulting table.
 This table can then be converted to the right format by using
 
@@ -20,7 +20,7 @@ This table can then be converted to the right format by using
 python processing/AFDB_to_uniprot.py table.csv
 ```
 
-Structures and sequences as well as metadata will then be downloaded automatically when running the snakemake pipeline.
+Structures and sequences as well as metadata will then be downloaded automatically when running the snakemake pipeline. Parameters like the amount of UF boostraps or custom model selection can be adjusted in the config/params.yaml file. Custom structures are also possible, in that case create a output folder in results/ and create a folder called 'structs' that only contains the pdb structures.
 
 # Usage
 
@@ -61,3 +61,7 @@ Below are the default parameters for tree reconstruction, which can be customize
 	* **3Di**: iqtree2 -s {3di.alignment} {same as AF} –mset 3DI -mdef resources/subst_matrixes/3DI.nexus
 	* **Part**: Create partition file with best model from **ML** and **AF**. Then
 		iqtree2 -s {combined_alignment} -p {input.part} -B 1000 -T {threads}
+
+# Customization
+
+In principle the entire pipeline is easily customizable by changing the input/output files in the snakemake rules, e.g. if we dont want to trim the alignments.
